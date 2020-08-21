@@ -1,30 +1,22 @@
 import axios from 'axios';
 
 const api = axios.create({
-	baseURL: 'http://www.aladin.co.kr/ttb/api/',
-	params: {
-		ttbkey: 'ttbqpdjdhkrha1525001',
-	},
+	baseURL: '/api/',
 });
 
 export const booksApi = {
 	search: item =>
-		api.get('ItemSearch.aspx', {
+		api.get('search.api', {
 			params: {
-				Query: item,
+				key: '48FA0EAD055D5F272FC1E1F639CA0D5F329FF47F91BABF2FF518B8E746EFB082',
+				query: item,
 			},
 		}),
-	detail: isbn =>
-		api.get('ItemLookUp.aspx', {
+	getList: category =>
+		api.get(`${category}`, {
 			params: {
-				itemIdType: 'ISBN13',
-				ItemId: isbn,
-			},
-		}),
-	getList: reqList =>
-		api.get('ItemList.aspx', {
-			params: {
-				QueryType: reqList,
+				key: '48FA0EAD055D5F272FC1E1F639CA0D5F329FF47F91BABF2FF518B8E746EFB082',
+				categoryId: '100',
 			},
 		}),
 };

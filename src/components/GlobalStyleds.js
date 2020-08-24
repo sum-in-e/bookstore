@@ -7,7 +7,7 @@ const globalStyles = createGlobalStyle`
         box-sizing : border-box;
     }
     body {
-        font-family: 'Noto Serif KR', serif;
+        font-family: 'Nanum Gothic Coding', monospace;
         font-size: 400;
     }
 `;

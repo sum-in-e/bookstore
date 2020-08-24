@@ -7,25 +7,30 @@ class HomeContainer extends React.Component {
 		bestseller: null,
 		recommendation: null,
 		newBook: null,
-		loading: false,
+		loading: true,
 	};
 
 	async componentDidMount() {
-		const {
-			data: { item: getBestseller },
-		} = await booksApi.getList('bestSeller');
-		const {
-			data: { item: getRecommendation },
-		} = await booksApi.getList('recommend');
-		const {
-			data: { item: getNewBook },
-		} = await booksApi.getList('newBook');
-		this.setState({
-			bestseller: getBestseller.slice(0, 10),
-			recommendation: getRecommendation.slice(0, 6),
-			newBook: getNewBook.slice(0, 3),
-			loading: true,
-		});
+		try {
+			const {
+				data: { item: getBestseller },
+			} = await booksApi.getList('bestSeller');
+			const {
+				data: { item: getRecommendation },
+			} = await booksApi.getList('recommend');
+			const {
+				data: { item: getNewBook },
+			} = await booksApi.getList('newBook');
+			this.setState({
+				bestseller: getBestseller.slice(0, 10),
+				recommendation: getRecommendation.slice(0, 6),
+				newBook: getNewBook.slice(0, 3),
+			});
+		} catch (error) {
+			console.log(error);
+		} finally {
+			this.setState({ loading: false });
+		}
 	}
 
 	render() {

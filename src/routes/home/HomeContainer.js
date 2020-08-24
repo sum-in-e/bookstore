@@ -13,13 +13,13 @@ class HomeContainer extends React.Component {
 	async componentDidMount() {
 		const {
 			data: { item: getBestseller },
-		} = await booksApi.getList('bestSeller.api');
+		} = await booksApi.getList('bestSeller');
 		const {
 			data: { item: getRecommendation },
-		} = await booksApi.getList('recommend.api');
+		} = await booksApi.getList('recommend');
 		const {
 			data: { item: getNewBook },
-		} = await booksApi.getList('newBook.api');
+		} = await booksApi.getList('newBook');
 		this.setState({
 			bestseller: getBestseller.slice(0, 10),
 			recommendation: getRecommendation.slice(0, 6),

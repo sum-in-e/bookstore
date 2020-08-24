@@ -63,16 +63,16 @@ const Preview = ({
 	isbn,
 	buyLink,
 }) => (
-	<SLink to={`book/${title}`}>
-		<Container>
-			<Cover bgUrl={coverImageS ? coverImageS : require('../assets/image_not_found.jpg')} />
-			<Info>
+	<Container>
+		<Cover bgUrl={coverImageS ? coverImageS : require('../assets/image_not_found.jpg')} />
+		<Info>
+			<SLink to={`book/${title}`}>
 				<Title>{title}</Title>
-				<Author>{author}</Author>
-				<Price>{`${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
-			</Info>
-		</Container>
-	</SLink>
+			</SLink>
+			<Author>{author}</Author>
+			<Price>{`${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
+		</Info>
+	</Container>
 );
 
 export default Preview;

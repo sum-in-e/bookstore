@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
 	position: relative;
@@ -15,6 +16,7 @@ const Grids = styled.div`
 	grid-template-rows: repeat(3, 1fr);
 	grid-template-columns: repeat(2, 1fr);
 	height: 100%;
+	margin-top: 1.2rem;
 `;
 
 const Btn = styled.button`
@@ -41,7 +43,9 @@ const Recommend = ({ title, children }) => (
 	<Container>
 		<Title>{title}</Title>
 		<Grids>{children}</Grids>
-		<Btn>More</Btn>
+		<Link to={'/list/recommend'}>
+			<Btn>More</Btn>
+		</Link>
 	</Container>
 );
 

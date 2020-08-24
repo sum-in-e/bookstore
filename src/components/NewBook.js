@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
 	position: relative;
-
 	width: 30%;
 	height: 95%;
 `;
@@ -47,7 +47,9 @@ const NewBook = ({ title, children }) => (
 	<Container>
 		<Title>{title}</Title>
 		<Grids>{children}</Grids>
-		<Btn>More</Btn>
+		<Link to={'/list/newBook'}>
+			<Btn>More</Btn>
+		</Link>
 	</Container>
 );
 

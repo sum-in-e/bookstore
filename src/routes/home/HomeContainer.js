@@ -35,7 +35,6 @@ class HomeContainer extends React.Component {
 
 	render() {
 		const { bestseller, recommendation, newBook, loading } = this.state;
-		console.log(newBook);
 		return (
 			<HomePresenter
 				bestseller={bestseller}

@@ -25,16 +25,9 @@ const SectionBottom = styled.section`
 	height: 90vh;
 `;
 
-const Footerrrr = styled.footer`
-	padding: 0 10rem;
-	width: 100%;
-	height: 25vh;
-	background-color: grey;
-`;
-
 const HomePresenter = ({ bestseller, recommendation, newBook, loading }) => (
 	<>
-		<Header></Header>
+		<Header />
 		<Main>
 			<SectionTop>
 				<ArticleBestseller />
@@ -82,6 +75,7 @@ const HomePresenter = ({ bestseller, recommendation, newBook, loading }) => (
 				)}
 			</SectionBottom>
 		</Main>
+		<Footer />
 	</>
 );
 

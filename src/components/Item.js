@@ -71,7 +71,7 @@ const Price = styled.p`
 	color: #e3900e;
 `;
 
-const Rank = styled.p``;
+const Rank = styled.span``;
 
 const SaleStatus = styled.div`
 	display: flex;
@@ -93,7 +93,7 @@ const Item = ({ title, author, saleStatus, publisher, pubDate, price, reviewRank
 				<PubDate>{`${pubDate.slice(0, 4)}년 ${pubDate.slice(4, 6)}월`}</PubDate>
 			</Section>
 			<Price>{`${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
-			<Rank>{`⭐️ ${reviewRank}/10`}</Rank>
+			<Rank role="img" aria-label="Loading">{`⭐️ ${reviewRank}/10`}</Rank>
 		</Info>
 		<SaleStatus>
 			<span>{saleStatus}</span>

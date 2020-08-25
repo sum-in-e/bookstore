@@ -19,7 +19,7 @@ const Container = styled.div`
 	padding: 1rem;
 `;
 
-const Cover = styled.div`
+const Img = styled.div`
 	width: 25%;
 	height: auto;
 	margin-top: 1.5rem;
@@ -64,9 +64,9 @@ const Preview = ({
 	buyLink,
 }) => (
 	<Container>
-		<Cover bgUrl={coverImageS ? coverImageS : require('../assets/image_not_found.jpg')} />
+		<Img bgUrl={coverImageS ? coverImageS : require('../assets/image_not_found.jpg')} />
 		<Info>
-			<SLink to={`book/${title}`}>
+			<SLink to={`/book/${title}`}>
 				<Title>{title}</Title>
 			</SLink>
 			<Author>{author}</Author>

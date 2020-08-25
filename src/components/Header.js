@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Books } from '@styled-icons/icomoon';
+import { Link } from 'react-router-dom';
 
 const Container = styled.header`
 	display: flex;
@@ -11,12 +12,25 @@ const Container = styled.header`
 	height: 20vh;
 `;
 
+const SLink = styled(Link)`
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	cursor: pointer;
+	&:focus,
+	&:hover,
+	&:visited,
+	&:link,
+	&:active {
+		text-decoration: none;
+	}
+`;
+
 const Logo = styled(Books)`
 	margin-right: 0.2rem;
 	width: 4.5rem;
 	height: 4.5rem;
 	color: #e3900e;
-	cursor: pointer;
 `;
 
 const Title = styled.h1`
@@ -24,8 +38,8 @@ const Title = styled.h1`
 	width: 5rem;
 	font-size: 1.7rem;
 	font-weight: 700;
+
 	color: #00317d;
-	cursor: pointer;
 `;
 
 const Input = styled.input`
@@ -38,8 +52,10 @@ const Input = styled.input`
 
 const Header = () => (
 	<Container>
-		<Logo></Logo>
-		<Title>Book Store</Title>
+		<SLink to={'/'}>
+			<Logo></Logo>
+			<Title>Book Store</Title>
+		</SLink>
 		<form>
 			<Input type="text"></Input>
 		</form>

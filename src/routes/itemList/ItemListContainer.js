@@ -16,6 +16,7 @@ class ItemListContainer extends React.Component {
 				data: { item: items },
 			} = await booksApi.getList(params);
 			this.setState({ items, params });
+			window.scrollTo(0, 0);
 		} catch (error) {
 			console.log(error);
 		} finally {

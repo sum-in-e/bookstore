@@ -26,6 +26,7 @@ class HomeContainer extends React.Component {
 				recommendation: getRecommendation.slice(0, 6),
 				newBook: getNewBook.slice(0, 3),
 			});
+			window.scrollTo(0, 0);
 		} catch (error) {
 			console.log(error);
 		} finally {

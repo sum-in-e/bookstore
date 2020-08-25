@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Header from 'components/Header';
 import Item from 'components/Item';
+import Footer from 'components/Footer';
 
 const Main = styled.main`
 	padding: 0 10rem;
@@ -21,11 +22,11 @@ const Section = styled.div`
 
 const ItemListPresenter = ({ items, params, loading }) => (
 	<>
-		<Header></Header>
+		<Header />
 		<Main>
-			{params && params.length > 0 && params == 'bestSeller' && <Title>베스트셀러</Title>}
-			{params && params.length > 0 && params == 'recommend' && <Title>추천 도서</Title>}
-			{params && params.length > 0 && params == 'newBook' && <Title>신작 도서</Title>}
+			{params && params.length > 0 && params === 'bestSeller' && <Title>베스트셀러</Title>}
+			{params && params.length > 0 && params === 'recommend' && <Title>추천 도서</Title>}
+			{params && params.length > 0 && params === 'newBook' && <Title>신작 도서</Title>}
 			{items && items.length > 0 && (
 				<Section>
 					{items.map(item => (
@@ -44,6 +45,7 @@ const ItemListPresenter = ({ items, params, loading }) => (
 				</Section>
 			)}
 		</Main>
+		<Footer />
 	</>
 );
 

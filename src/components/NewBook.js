@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const Container = styled.div`
+const Container = styled.article`
 	position: relative;
 	width: 30%;
 	height: 95%;

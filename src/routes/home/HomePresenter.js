@@ -1,17 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import Loader from 'components/Loader';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import ArticleBestseller from 'components/BestSeller';
 import ArticleRecommend from 'components/Recommend';
 import ArticleNewBook from 'components/NewBook';
 import Preview from 'components/Preview';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Loader from 'components/Loader';
+import SlideContent from 'components/SlideContent';
 
 const Main = styled.main``;
 
-const ArticleBestseller = styled.div``;
-
 const SectionTop = styled.section`
+	display: flex;
+	align-items: center;
+	position: relative;
 	padding: 0 10rem;
 	width: 100%;
 	height: 75vh;
@@ -26,7 +29,7 @@ const SectionBottom = styled.section`
 	height: 90vh;
 `;
 
-const HomePresenter = ({ bestseller, recommendation, newBook, loading }) => (
+const HomePresenter = ({ bestseller, recommendation, newBook, loading, settings }) => (
 	<>
 		{loading ? (
 			<Loader />
@@ -35,7 +38,26 @@ const HomePresenter = ({ bestseller, recommendation, newBook, loading }) => (
 				<Header />
 				<Main>
 					<SectionTop>
-						<ArticleBestseller />
+						{bestseller && bestseller.length > 0 && (
+							<ArticleBestseller title={'베스트셀러'} settings={settings}>
+								{bestseller.map(book => (
+									<SlideContent
+										key={book.itemId}
+										title={book.title}
+										author={book.author}
+										publisher={book.publisher}
+										price={book.priceSales}
+										description={book.description}
+										pubDate={book.pubDate}
+										saleStatus={book.saleStatus}
+										coverImageS={book.coverSmallUrl}
+										coverImageL={book.coverLargeUrl}
+										isbn={book.isbn}
+										buyLink={book.link}
+									/>
+								))}
+							</ArticleBestseller>
+						)}
 					</SectionTop>
 					<SectionBottom>
 						{recommendation && recommendation.length > 0 && (

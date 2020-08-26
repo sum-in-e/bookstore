@@ -8,6 +8,14 @@ class HomeContainer extends React.Component {
 		recommendation: null,
 		newBook: null,
 		loading: true,
+		settings: {
+			dots: true,
+			infinite: true,
+			speed: 500,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			arrows: true,
+		},
 	};
 
 	async componentDidMount() {
@@ -35,13 +43,14 @@ class HomeContainer extends React.Component {
 	}
 
 	render() {
-		const { bestseller, recommendation, newBook, loading } = this.state;
+		const { bestseller, recommendation, newBook, loading, settings } = this.state;
 		return (
 			<HomePresenter
 				bestseller={bestseller}
 				recommendation={recommendation}
 				newBook={newBook}
 				loading={loading}
+				settings={settings}
 			/>
 		);
 	}

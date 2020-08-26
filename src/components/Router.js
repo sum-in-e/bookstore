@@ -11,7 +11,7 @@ export default () => (
 			<Switch>
 				<Route path="/" exact component={Home} />
 				<Route path="/list/:queryType" component={ItemList} />
-				<Route path="/search" component={Search} />
+				<Route path="/search/:item" component={Search} />
 				<Route path="/book/:id" component={Detail} />
 				<Redirect from="*" to="/" />
 			</Switch>

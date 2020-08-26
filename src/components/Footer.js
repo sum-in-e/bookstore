@@ -8,7 +8,7 @@ const Container = styled.div`
 	padding: 0 10rem;
 	width: 100%;
 	height: 30vh;
-	background-color: grey;
+	background-color: #00317d;
 `;
 
 const Section = styled.section`
@@ -29,13 +29,18 @@ const Title = styled.h1`
 	width: 5rem;
 	font-size: 1.7rem;
 	font-weight: 700;
-
-	color: #00317d;
+	color: white;
 `;
 
 const MailSection = styled.section`
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+`;
+
+const P = styled.p`
+	color: white;
+	font-size: 0.9rem;
 `;
 
 const Input = styled.input`
@@ -44,10 +49,12 @@ const Input = styled.input`
 	outline: none;
 	font-size: 1.2rem;
 	border: none;
-	border-radius: 8px;
+	border-bottom: 1px white solid;
+	background: none;
+	color: white;
 	&::placeholder {
-		font-size: 1.2rem;
-		color: #caccd1;
+		font-size: 0.9rem;
+		color: rgb(208, 210, 211, 0.5);
 	}
 `;
 
@@ -58,7 +65,8 @@ const Footer = () => (
 			<Title>Book Store</Title>
 		</Section>
 		<MailSection>
-			<Input type="text" placeholder="독자 구독 서비스를 희망하시는 경우 메일을 기재해주세요."></Input>
+			<P>Subscribe to Reading Newspapers</P>
+			<Input type="text" placeholder="example@gmail.com"></Input>
 		</MailSection>
 	</Container>
 );

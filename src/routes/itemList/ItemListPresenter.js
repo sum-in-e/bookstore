@@ -39,12 +39,16 @@ const ItemListPresenter = ({ items, params, loading }) => (
 									key={item.itemId}
 									title={item.title}
 									author={item.author}
-									saleStatus={item.saleStatus}
 									publisher={item.publisher}
-									pubDate={item.pubDate}
 									price={item.priceSales}
+									description={item.description}
+									pubDate={item.pubDate}
+									saleStatus={item.saleStatus}
 									reviewRank={item.customerReviewRank}
-									cover={item.coverSmallUrl}
+									coverImageS={item.coverSmallUrl}
+									coverImageL={item.coverLargeUrl}
+									isbn={item.isbn}
+									buyLink={item.link}
 								/>
 							))}
 						</Section>

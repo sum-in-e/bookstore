@@ -113,13 +113,15 @@ const DetailPresenter = ({
 	isbn,
 	loading,
 	handleClick,
+	handleSubmit,
+	handleChange,
 }) => (
 	<>
 		{loading ? (
 			<Loader />
 		) : (
 			<>
-				<Header></Header>
+				<Header handleSubmit={handleSubmit} handleChange={handleChange} />
 				<Main>
 					<HeaderSection>
 						<Title>{title}</Title>
@@ -145,7 +147,7 @@ const DetailPresenter = ({
 						</Info>
 					</InfoSection>
 				</Main>
-				<Footer></Footer>
+				<Footer />
 			</>
 		)}
 	</>

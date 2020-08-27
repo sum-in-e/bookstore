@@ -16,6 +16,22 @@ class DetailContainer extends React.Component {
 		isbn: null,
 		buyLink: null,
 		loading: true,
+		searchTerm: null,
+	};
+
+	handleSubmit = event => {
+		event.preventDefault();
+		const { searchTerm } = this.state;
+		if (searchTerm !== '') {
+			this.props.history.push(`/search/${searchTerm}`);
+		}
+	};
+
+	handleChange = event => {
+		const {
+			target: { value: searchTerm },
+		} = event;
+		this.setState({ searchTerm });
 	};
 
 	handleClick = event => {
@@ -76,6 +92,8 @@ class DetailContainer extends React.Component {
 				isbn={isbn}
 				loading={loading}
 				handleClick={this.handleClick}
+				handleSubmit={this.handleSubmit}
+				handleChange={this.handleChange}
 			/>
 		);
 	}

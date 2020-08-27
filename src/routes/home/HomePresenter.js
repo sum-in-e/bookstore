@@ -29,13 +29,13 @@ const SectionBottom = styled.section`
 	height: 90vh;
 `;
 
-const HomePresenter = ({ bestseller, recommendation, newBook, loading, settings }) => (
+const HomePresenter = ({ bestseller, recommendation, newBook, loading, settings, handleSubmit, handleChange }) => (
 	<>
 		{loading ? (
 			<Loader />
 		) : (
 			<>
-				<Header />
+				<Header handleSubmit={handleSubmit} handleChange={handleChange} />
 				<Main>
 					<SectionTop>
 						{bestseller && bestseller.length > 0 && (

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from 'components/Header';
-import Item from 'components/Item';
-import Footer from 'components/Footer';
 import Loader from 'components/Loader';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import Item from 'components/Item';
 
 const Main = styled.main`
 	padding: 0 10rem;
@@ -21,13 +21,13 @@ const Section = styled.div`
 	align-items: center;
 `;
 
-const ItemListPresenter = ({ items, params, loading }) => (
+const ItemListPresenter = ({ items, params, loading, handleSubmit, handleChange }) => (
 	<>
 		{loading ? (
 			<Loader />
 		) : (
 			<>
-				<Header />
+				<Header handleSubmit={handleSubmit} handleChange={handleChange} />
 				<Main>
 					{params && params.length > 0 && params === 'bestSeller' && <Title>베스트셀러</Title>}
 					{params && params.length > 0 && params === 'recommend' && <Title>추천 도서</Title>}

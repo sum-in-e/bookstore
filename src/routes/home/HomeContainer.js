@@ -8,6 +8,7 @@ class HomeContainer extends React.Component {
 		recommendation: null,
 		newBook: null,
 		loading: true,
+		searchTerm: null,
 		settings: {
 			dots: true,
 			infinite: true,
@@ -18,6 +19,21 @@ class HomeContainer extends React.Component {
 			autoplay: true,
 			autoplaySpeed: 3000,
 		},
+	};
+
+	handleSubmit = event => {
+		event.preventDefault();
+		const { searchTerm } = this.state;
+		if (searchTerm !== '') {
+			this.props.history.push(`/search/${searchTerm}`);
+		}
+	};
+
+	handleChange = event => {
+		const {
+			target: { value: searchTerm },
+		} = event;
+		this.setState({ searchTerm });
 	};
 
 	async componentDidMount() {
@@ -53,6 +69,8 @@ class HomeContainer extends React.Component {
 				newBook={newBook}
 				loading={loading}
 				settings={settings}
+				handleSubmit={this.handleSubmit}
+				handleChange={this.handleChange}
 			/>
 		);
 	}

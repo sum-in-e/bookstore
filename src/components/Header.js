@@ -38,7 +38,6 @@ const Title = styled.h1`
 	width: 5rem;
 	font-size: 1.7rem;
 	font-weight: 700;
-
 	color: #00317d;
 `;
 
@@ -50,14 +49,14 @@ const Input = styled.input`
 	border: #9f9fa3 1px solid;
 `;
 
-const Header = () => (
+const Header = ({ handleSubmit, handleChange }) => (
 	<Container>
 		<SLink to={'/'}>
 			<Logo></Logo>
 			<Title>Book Store</Title>
 		</SLink>
-		<form>
-			<Input type="text"></Input>
+		<form onSubmit={handleSubmit}>
+			<Input onChange={handleChange} type="text"></Input>
 		</form>
 	</Container>
 );

@@ -80,11 +80,41 @@ const SaleStatus = styled.div`
 	width: 10%;
 `;
 
-const Item = ({ title, author, saleStatus, publisher, pubDate, price, reviewRank, cover }) => (
+const Item = ({
+	title,
+	author,
+	saleStatus,
+	publisher,
+	pubDate,
+	price,
+	description,
+	reviewRank,
+	coverImageS,
+	coverImageL,
+	isbn,
+	buyLink,
+}) => (
 	<Container>
-		<Img url={cover ? cover : require('../assets/image_not_found.jpg')} />
+		<Img url={coverImageS ? coverImageS : require('../assets/image_not_found.jpg')} />
 		<Info>
-			<SLink to={`/book/${title}`}>
+			<SLink
+				to={{
+					pathname: `/book/${title}`,
+					state: {
+						title,
+						author,
+						price,
+						publisher,
+						description,
+						pubDate,
+						saleStatus,
+						reviewRank,
+						coverImageL,
+						isbn,
+						buyLink,
+					},
+				}}
+			>
 				<Title>{title}</Title>
 			</SLink>
 			<Section>

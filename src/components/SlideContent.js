@@ -2,6 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+const SLink = styled(Link)`
+	text-decoration: none;
+	color: black;
+	&:focus,
+	&:hover,
+	&:visited,
+	&:link,
+	&:active {
+		text-decoration: none;
+	}
+`;
+
 const Container = styled.div`
 	display: flex;
 	width: 100%;
@@ -63,24 +75,44 @@ const SlideContent = ({
 	description,
 	pubDate,
 	saleStatus,
+	reviewRank,
 	coverImageS,
 	coverImageL,
 	isbn,
 	buyLink,
 }) => (
-	<Container>
-		<Cover url={coverImageL ? coverImageL : require('../assets/image_not_found.jpg')} />
-		<Info>
-			<Title>{title}</Title>
-			<Box>
-				<Author>{author ? author : '저자 미상'}</Author>
-				<Publisher>{publisher}</Publisher>
-				<PubDate>{`${pubDate.slice(0, 4)}년 ${pubDate.slice(4, 6)}월`}</PubDate>
-			</Box>
-			<Description>{description}</Description>
-			<Price>{`${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
-		</Info>
-	</Container>
+	<SLink
+		to={{
+			pathname: `/book/${title}`,
+			state: {
+				title,
+				author,
+				price,
+				publisher,
+				description,
+				pubDate,
+				saleStatus,
+				reviewRank,
+				coverImageL,
+				isbn,
+				buyLink,
+			},
+		}}
+	>
+		<Container>
+			<Cover url={coverImageL ? coverImageL : require('../assets/image_not_found.jpg')} />
+			<Info>
+				<Title>{title}</Title>
+				<Box>
+					<Author>{author ? author : '저자 미상'}</Author>
+					<Publisher>{publisher}</Publisher>
+					<PubDate>{`${pubDate.slice(0, 4)}년 ${pubDate.slice(4, 6)}월`}</PubDate>
+				</Box>
+				<Description>{description}</Description>
+				<Price>{`${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
+			</Info>
+		</Container>
+	</SLink>
 );
 
 export default SlideContent;

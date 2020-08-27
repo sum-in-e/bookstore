@@ -58,6 +58,7 @@ const Preview = ({
 	description,
 	pubDate,
 	saleStatus,
+	reviewRank,
 	coverImageS,
 	coverImageL,
 	isbn,
@@ -66,7 +67,24 @@ const Preview = ({
 	<Container>
 		<Img bgUrl={coverImageS ? coverImageS : require('../assets/image_not_found.jpg')} />
 		<Info>
-			<SLink to={`/book/${title}`}>
+			<SLink
+				to={{
+					pathname: `/book/${title}`,
+					state: {
+						title,
+						author,
+						price,
+						publisher,
+						description,
+						pubDate,
+						saleStatus,
+						reviewRank,
+						coverImageL,
+						isbn,
+						buyLink,
+					},
+				}}
+			>
 				<Title>{title}</Title>
 			</SLink>
 			<Author>{author}</Author>

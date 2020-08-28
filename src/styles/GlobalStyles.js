@@ -13,6 +13,9 @@ const globalStyles = createGlobalStyle`
         font-size: 400;
     }
     html {
+        @media ${props => props.theme.laptop} {
+            font-size : 14px;
+	}
         @media ${props => props.theme.tabletL} {
             font-size : 12px;
 	}

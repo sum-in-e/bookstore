@@ -10,6 +10,7 @@ const Container = styled.header`
 	padding: 0 8rem;
 	width: 100%;
 	height: 20vh;
+	font-family: 'Nanum Gothic Coding', monospace;
 `;
 
 const SLink = styled(Link)`

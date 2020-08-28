@@ -9,7 +9,7 @@ const globalStyles = createGlobalStyle`
         box-sizing : border-box;
     }
     body {
-        font-family: 'Nanum Gothic Coding', monospace;
+        font-family: 'Noto Sans KR', sans-serif;
         font-size: 400;
     }
 `;

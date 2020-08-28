@@ -7,12 +7,6 @@ const Container = styled.article`
 	width: 100%;
 `;
 
-const Title = styled.h1`
-	position: absolute;
-	top: 2rem;
-	font-size: 1.3rem;
-`;
-
 const SlideList = styled(Slider)`
 	display: flex;
 	justify-content: center;
@@ -34,8 +28,8 @@ const SlideList = styled(Slider)`
 
 const Btn = styled.button`
 	position: absolute;
-	top: 5rem;
-	right: 7rem;
+	top: 6rem;
+	right: 13rem;
 	width: 4rem;
 	height: 1.5rem;
 	background: none;
@@ -47,14 +41,13 @@ const Btn = styled.button`
 	cursor: pointer;
 
 	&:hover {
-		background-color: black;
-		color: white;
+		background-color: #f8f3ed;
+		color: #e3900e;
 	}
 `;
 
 const BestSeller = ({ title, children, settings }) => (
 	<Container>
-		<Title>{title}</Title>
 		<SlideList {...settings}>{children}</SlideList>
 		<Link to={'/list/bestSeller'}>
 			<Btn>More</Btn>

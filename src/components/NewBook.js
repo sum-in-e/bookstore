@@ -38,8 +38,8 @@ const Btn = styled.button`
 	cursor: pointer;
 
 	&:hover {
-		background-color: black;
-		color: white;
+		background-color: #f8f3ed;
+		color: #e3900e;
 	}
 `;
 

@@ -14,10 +14,10 @@ const globalStyles = createGlobalStyle`
     }
     html {
         @media ${props => props.theme.laptop} {
-            font-size : 14px;
+            font-size : 15px;
 	}
         @media ${props => props.theme.tabletL} {
-            font-size : 12px;
+            font-size : 14px;
 	}
     }
 `;

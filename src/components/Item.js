@@ -19,6 +19,7 @@ const Img = styled.div`
 	background-image: url(${props => props.url});
 	background-repeat: no-repeat;
 	background-size: contain;
+	background-position: center center;
 `;
 
 const Info = styled.div`

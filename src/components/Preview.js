@@ -25,6 +25,7 @@ const Img = styled.div`
 	margin-top: 1.5rem;
 	background-image: url(${props => props.bgUrl});
 	background-size: contain;
+	background-position: center center;
 	background-repeat: no-repeat;
 `;
 

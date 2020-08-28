@@ -55,7 +55,7 @@ const InfoSection = styled.section`
 `;
 
 const Cover = styled.div`
-	width: 80rem;
+	width: 70rem;
 	height: auto;
 	margin-left: 1rem;
 	background-image: url(${props => props.url});

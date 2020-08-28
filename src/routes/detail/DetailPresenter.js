@@ -100,22 +100,7 @@ const BuyBtn = styled.button`
 	cursor: pointer;
 `;
 
-const DetailPresenter = ({
-	title,
-	author,
-	saleStatus,
-	publisher,
-	pubDate,
-	price,
-	description,
-	reviewRank,
-	coverImageL,
-	isbn,
-	loading,
-	handleClick,
-	handleSubmit,
-	handleChange,
-}) => (
+const DetailPresenter = ({ bookDetail, loading, handleClick, handleSubmit, handleChange }) => (
 	<>
 		{loading ? (
 			<Loader />
@@ -123,29 +108,44 @@ const DetailPresenter = ({
 			<>
 				<Header handleSubmit={handleSubmit} handleChange={handleChange} />
 				<Main>
-					<HeaderSection>
-						<Title>{title}</Title>
-						<Article>
-							<Author>{author ? author : '저자 미상'}</Author>
-							<Publisher>{publisher}</Publisher>
-							<PubDate>
-								{pubDate
-									? `${pubDate.slice(0, 4)}-${pubDate.slice(4, 6)}-${pubDate.slice(6, 8)}`
-									: '0000-00-00'}
-							</PubDate>
-						</Article>
-					</HeaderSection>
-					<InfoSection>
-						<Cover url={coverImageL ? coverImageL : require('../../assets/image_not_found.jpg')} />
-						<Info>
-							<SaleStatus>{saleStatus}</SaleStatus>
-							<Price>{`판매가       ${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
-							<Isbn>{`isbn       ${isbn}`}</Isbn>
-							<Description>{description}</Description>
-							<span role="img" aria-label="rank">{`⭐️ ${reviewRank}/10`}</span>
-							<BuyBtn onClick={handleClick}>구매하기</BuyBtn>
-						</Info>
-					</InfoSection>
+					{bookDetail ? (
+						<>
+							<HeaderSection>
+								<Title>{bookDetail.title}</Title>
+								<Article>
+									<Author>{bookDetail.author ? bookDetail.author : '저자 미상'}</Author>
+									<Publisher>{bookDetail.publisher}</Publisher>
+									<PubDate>
+										{`${bookDetail.pubDate.slice(0, 4)}-${bookDetail.pubDate.slice(
+											4,
+											6,
+										)}-${bookDetail.pubDate.slice(6, 8)}`}
+									</PubDate>
+								</Article>
+							</HeaderSection>
+							<InfoSection>
+								<Cover
+									url={
+										bookDetail.coverImageL
+											? bookDetail.coverImageL
+											: require('../../assets/image_not_found.jpg')
+									}
+								/>
+								<Info>
+									<SaleStatus>{bookDetail.saleStatus}</SaleStatus>
+									<Price>{`판매가       ${bookDetail.price
+										.toString()
+										.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
+									<Isbn>{`isbn       ${bookDetail.isbn}`}</Isbn>
+									<Description>{bookDetail.description}</Description>
+									<span role="img" aria-label="rank">{`⭐️ ${bookDetail.reviewRank}/10`}</span>
+									<BuyBtn onClick={handleClick}>구매하기</BuyBtn>
+								</Info>
+							</InfoSection>
+						</>
+					) : (
+						''
+					)}
 				</Main>
 				<Footer />
 			</>

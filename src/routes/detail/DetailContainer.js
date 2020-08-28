@@ -36,9 +36,6 @@ class DetailContainer extends React.Component {
 			const bookDetail = await this.props.location.state;
 			this.setState({ bookDetail });
 			window.scrollTo(0, 0);
-			window.onbeforeunload = () => {
-				return 'Stop this event';
-			};
 		} catch (error) {
 			console.log(error);
 		} finally {

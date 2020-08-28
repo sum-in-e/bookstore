@@ -51,7 +51,7 @@ const InfoSection = styled.section`
 `;
 
 const Cover = styled.div`
-	width: 120rem;
+	width: 100rem;
 	height: auto;
 	margin-left: 1rem;
 	background-image: url(${props => props.url});
@@ -93,7 +93,7 @@ const BuyBtn = styled.button`
 	height: 3rem;
 	background-color: #00317d;
 	color: white;
-	margin-top: 1rem;
+	margin-top: 1.5rem;
 	border: 1px solid grey;
 	outline: none;
 	font-size: 1.1rem;
@@ -144,7 +144,7 @@ const DetailPresenter = ({ bookDetail, loading, handleClick, handleSubmit, handl
 							</InfoSection>
 						</>
 					) : (
-						''
+						'데이터를 가져올 수 없습니다.'
 					)}
 				</Main>
 				<Footer />

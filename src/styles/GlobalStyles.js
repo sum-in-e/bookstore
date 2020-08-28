@@ -12,6 +12,11 @@ const globalStyles = createGlobalStyle`
         font-family: 'Noto Sans KR', sans-serif;
         font-size: 400;
     }
+    html {
+        @media ${props => props.theme.tabletL} {
+            font-size : 12px;
+	}
+    }
 `;
 
 export default globalStyles;

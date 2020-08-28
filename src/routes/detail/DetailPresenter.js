@@ -65,6 +65,9 @@ const Cover = styled.div`
 	@media ${props => props.theme.laptap} {
 		width: 120rem;
 	}
+	@media ${props => props.theme.tabletL} {
+		width: 90rem;
+	}
 `;
 
 const Info = styled.article`

@@ -24,6 +24,7 @@ const Cover = styled.div`
 	background-image: url(${props => props.url});
 	background-repeat: no-repeat;
 	background-size: contain;
+	background-position: center center;
 	width: 50rem;
 	height: auto;
 
@@ -31,7 +32,7 @@ const Cover = styled.div`
 		width: 80rem;
 	}
 	@media ${props => props.theme.tabletL} {
-		width: 60rem;
+		width: 90rem;
 	}
 `;
 

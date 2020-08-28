@@ -27,6 +27,9 @@ const SectionBottom = styled.section`
 	padding: 2rem 10rem;
 	width: 100%;
 	height: 90vh;
+	@media ${props => props.theme.tabletL} {
+		height: 65vh;
+	}
 `;
 
 const HomePresenter = ({ bestseller, recommendation, newBook, loading, settings, handleSubmit, handleChange }) => (

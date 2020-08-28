@@ -17,6 +17,9 @@ const Grids = styled.div`
 	grid-template-columns: repeat(2, 1fr);
 	height: 100%;
 	margin-top: 1.2rem;
+	@media ${props => props.theme.tabletL} {
+		height: 80%;
+	}
 `;
 
 const Btn = styled.button`

@@ -66,7 +66,7 @@ const Cover = styled.div`
 		width: 110rem;
 	}
 	@media ${props => props.theme.tabletL} {
-		width: 90rem;
+		width: 130rem;
 	}
 `;
 
@@ -94,6 +94,10 @@ const Price = styled.p`
 
 const Isbn = styled.p`
 	padding-bottom: 3rem;
+
+	@media ${props => props.theme.tabletL} {
+		padding-bottom: 1.5rem;
+	}
 `;
 
 const Description = styled.p`

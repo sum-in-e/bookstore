@@ -21,6 +21,9 @@ const Grids = styled.div`
 	margin-top: 1.2rem;
 	background-color: #f8f3ed;
 	border-radius: 12px;
+	@media ${props => props.theme.tabletL} {
+		height: 80%;
+	}
 `;
 
 const Btn = styled.button`

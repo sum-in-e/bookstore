@@ -11,6 +11,9 @@ const Container = styled.div`
 	background-color: #f8f3ed;
 	border: 1px solid #caccd1;
 	border-radius: 10px;
+	@media ${props => props.theme.tabletL} {
+		height: 22vh;
+	}
 `;
 
 const Img = styled.div`

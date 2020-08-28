@@ -22,6 +22,9 @@ const SlideList = styled(Slider)`
 	}
 	& .slick-list {
 		width: 80%;
+		@media ${props => props.theme.tabletL} {
+			width: 100%;
+		}
 	}
 	& > ul {
 		bottom: -5rem;
@@ -45,6 +48,10 @@ const Btn = styled.button`
 	&:hover {
 		background-color: #f8f3ed;
 		color: #e3900e;
+	}
+
+	@media ${props => props.theme.tabletL} {
+		right: 11rem;
 	}
 `;
 

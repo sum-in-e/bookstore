@@ -8,11 +8,17 @@ import Item from 'components/Item';
 const Main = styled.main`
 	padding: 0 10rem;
 	background-color: #f8f3ed;
+	@media ${props => props.theme.tabletM} {
+		padding: 0 3rem;
+	}
 `;
 
 const Title = styled.h1`
 	padding: 2rem 8rem;
 	font-size: 1.6rem;
+	@media ${props => props.theme.tabletM} {
+		padding: 2rem 4rem;
+	}
 `;
 
 const Section = styled.div`

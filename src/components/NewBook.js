@@ -3,9 +3,16 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Container = styled.article`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	position: relative;
 	width: 30%;
 	height: 95%;
+	@media ${props => props.theme.tabletM} {
+		width: 100%;
+		height: 40%;
+	}
 `;
 
 const Title = styled.h1`
@@ -21,8 +28,9 @@ const Grids = styled.div`
 	margin-top: 1.2rem;
 	background-color: #f8f3ed;
 	border-radius: 12px;
-	@media ${props => props.theme.tabletL} {
-		height: 80%;
+	@media ${props => props.theme.tabletM} {
+		grid-template-rows: 1fr;
+		grid-template-columns: repeat(3, 1fr);
 	}
 `;
 

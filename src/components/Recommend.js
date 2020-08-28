@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 const Container = styled.article`
 	position: relative;
 	width: 60%;
+	@media ${props => props.theme.tabletM} {
+		width: 100%;
+		height: 60%;
+	}
 `;
 
 const Title = styled.h1`
@@ -19,6 +23,10 @@ const Grids = styled.div`
 	margin-top: 1.2rem;
 	@media ${props => props.theme.tabletL} {
 		height: 80%;
+	}
+	@media ${props => props.theme.tabletM} {
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 	}
 `;
 

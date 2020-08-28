@@ -10,6 +10,10 @@ const Container = styled.div`
 	height: 30vh;
 	background-color: #00317d;
 	font-family: 'Nanum Gothic Coding', monospace;
+	@media ${props => props.theme.tabletM} {
+		padding: 0 5rem;
+		height: 20vh;
+	}
 `;
 
 const Section = styled.section`

@@ -11,6 +11,10 @@ const Container = styled.header`
 	width: 100%;
 	height: 20vh;
 	font-family: 'Nanum Gothic Coding', monospace;
+	@media ${props => props.theme.tabletM} {
+		padding: 0 5rem;
+		height: 15vh;
+	}
 `;
 
 const SLink = styled(Link)`
@@ -48,6 +52,10 @@ const Input = styled.input`
 	outline: none;
 	font-size: 1.3rem;
 	border: #9f9fa3 1px solid;
+	@media ${props => props.theme.tabletM} {
+		width: 40vw;
+		height: 5vh;
+	}
 `;
 
 const Header = ({ handleSubmit, handleChange }) => (

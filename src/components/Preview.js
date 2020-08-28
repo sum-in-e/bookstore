@@ -48,11 +48,19 @@ const Title = styled.h1`
 	font-size: 1.1rem;
 	line-height: 1.3rem;
 	color: #00317d;
+	@media ${props => props.theme.tabletM} {
+		font-size: 1rem;
+	}
 `;
+
 const Author = styled.p`
 	padding-bottom: 0.6rem;
 	color: black;
+	@media ${props => props.theme.tabletM} {
+		font-size: 0.9rem;
+	}
 `;
+
 const Price = styled.p`
 	color: #e3900e;
 `;

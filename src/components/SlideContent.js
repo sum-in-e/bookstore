@@ -18,6 +18,10 @@ const Container = styled.div`
 	display: flex;
 	width: 100%;
 	padding-left: 2rem;
+	@media ${props => props.theme.tabletM} {
+		flex-direction: column;
+		padding-top: 3rem;
+	}
 `;
 
 const Cover = styled.div`
@@ -34,20 +38,37 @@ const Cover = styled.div`
 	@media ${props => props.theme.tabletL} {
 		width: 90rem;
 	}
+	@media ${props => props.theme.tabletM} {
+		width: auto;
+		height: 15rem;
+	}
 `;
 
 const Info = styled.div`
 	padding-left: 2rem;
+	@media ${props => props.theme.tabletM} {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 2rem;
+	}
 `;
 
 const Title = styled.h1`
 	font-size: 2.5rem;
 	color: #00317d;
+	@media ${props => props.theme.tabletM} {
+		font-size: 2rem;
+	}
 `;
 
 const Box = styled.div`
 	display: flex;
 	padding: 3rem 0 2rem 0;
+	@media ${props => props.theme.tabletM} {
+		font-size: 0.9rem;
+		padding: 1rem;
+	}
 `;
 
 const Author = styled.p`
@@ -68,6 +89,10 @@ const Description = styled.p`
 	font-size: 0.9rem;
 	line-height: 1rem;
 	padding-bottom: 1rem;
+	@media ${props => props.theme.tabletM} {
+		display: none;
+		font-size: 0.9rem;
+	}
 `;
 
 const Price = styled.p`

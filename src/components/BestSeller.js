@@ -25,6 +25,9 @@ const SlideList = styled(Slider)`
 		@media ${props => props.theme.tabletL} {
 			width: 100%;
 		}
+		@media ${props => props.theme.tabletM} {
+			height: 100%;
+		}
 	}
 	& > ul {
 		bottom: -5rem;
@@ -55,6 +58,10 @@ const Btn = styled.button`
 
 	@media ${props => props.theme.tabletL} {
 		right: 11rem;
+	}
+	@media ${props => props.theme.tabletM} {
+		top: 5rem;
+		right: 5rem;
 	}
 `;
 

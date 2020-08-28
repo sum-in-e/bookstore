@@ -8,6 +8,10 @@ const Main = styled.main`
 	width: 100%;
 	height: 80vh;
 	padding: 0 10rem;
+	@media ${props => props.theme.tabletM} {
+		height: 100vh;
+		padding: 0 5rem;
+	}
 `;
 
 const HeaderSection = styled.section`
@@ -18,6 +22,9 @@ const HeaderSection = styled.section`
 	height: 20%;
 	padding: 1rem 0;
 	border-bottom: 1px solid grey;
+	@media ${props => props.theme.tabletM} {
+		height: 10%;
+	}
 `;
 
 const Title = styled.h1`
@@ -52,6 +59,10 @@ const InfoSection = styled.section`
 	width: 90%;
 	height: 70%;
 	margin: 2rem 0;
+	@media ${props => props.theme.tabletM} {
+		flex-direction: column;
+		width: 90%;
+	}
 `;
 
 const Cover = styled.div`
@@ -67,6 +78,12 @@ const Cover = styled.div`
 	}
 	@media ${props => props.theme.tabletL} {
 		width: 130rem;
+	}
+	@media ${props => props.theme.tabletM} {
+		width: auto;
+		height: 50%;
+		margin-bottom: 2rem;
+		background-position: center center;
 	}
 `;
 

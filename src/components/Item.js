@@ -14,6 +14,10 @@ const Container = styled.div`
 	@media ${props => props.theme.tabletL} {
 		height: 22vh;
 	}
+	@media ${props => props.theme.tabletM} {
+		height: 18vh;
+		width: 90%;
+	}
 `;
 
 const Img = styled.div`

@@ -11,6 +11,9 @@ const Main = styled.main`
 `;
 
 const HeaderSection = styled.section`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	width: 100%;
 	height: 20%;
 	padding: 1rem 0;
@@ -42,27 +45,30 @@ const Publisher = styled.p`
 const PubDate = styled.p`
 	padding: 0 0.5rem;
 `;
+
 const InfoSection = styled.section`
 	display: flex;
 	position: relative;
 	width: 90%;
-	height: 80%;
+	height: 70%;
 	margin: 2rem 0;
 `;
 
 const Cover = styled.div`
-	width: 100rem;
+	width: 80rem;
 	height: auto;
 	margin-left: 1rem;
 	background-image: url(${props => props.url});
 	background-repeat: no-repeat;
 	background-size: contain;
 `;
+
 const Info = styled.article`
 	display: flex;
 	flex-direction: column;
 	padding-left: 2rem;
 `;
+
 const SaleStatus = styled.p`
 	width: 5rem;
 	height: 2rem;
@@ -80,23 +86,23 @@ const Price = styled.p`
 `;
 
 const Isbn = styled.p`
-	padding-bottom: 2rem;
+	padding-bottom: 3rem;
 `;
 
 const Description = styled.p`
 	line-height: 1.1rem;
-	padding-bottom: 1rem;
+	padding-bottom: 1.5rem;
 `;
 
 const BuyBtn = styled.button`
 	width: 7.5rem;
 	height: 3rem;
+	margin-top: 2.5rem;
+	border: 1px solid grey;
 	background-color: #00317d;
 	color: white;
-	margin-top: 1.5rem;
-	border: 1px solid grey;
-	outline: none;
 	font-size: 1.1rem;
+	outline: none;
 	cursor: pointer;
 `;
 

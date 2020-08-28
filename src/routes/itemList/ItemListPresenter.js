@@ -11,7 +11,7 @@ const Main = styled.main`
 `;
 
 const Title = styled.h1`
-	padding: 2rem 7.5rem;
+	padding: 2rem 8rem;
 	font-size: 1.6rem;
 `;
 

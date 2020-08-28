@@ -10,7 +10,9 @@ const Container = styled.article`
 const SlideList = styled(Slider)`
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	width: 100%;
+	height: 50vh;
 	& div {
 		outline: none;
 	}

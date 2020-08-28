@@ -61,6 +61,10 @@ const Cover = styled.div`
 	background-image: url(${props => props.url});
 	background-repeat: no-repeat;
 	background-size: contain;
+
+	@media ${props => props.theme.laptap} {
+		width: 120rem;
+	}
 `;
 
 const Info = styled.article`

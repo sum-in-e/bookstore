@@ -47,7 +47,6 @@ class SearchContainer extends React.Component {
 				data: { item: results },
 			} = await booksApi.search(params);
 			this.setState({ results, params });
-			console.log(results);
 		} catch (error) {
 			console.log(error);
 		} finally {

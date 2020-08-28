@@ -26,6 +26,10 @@ const Cover = styled.div`
 	background-size: contain;
 	width: 50rem;
 	height: auto;
+
+	@media ${props => props.theme.laptap} {
+		width: 100rem;
+	}
 `;
 
 const Info = styled.div`

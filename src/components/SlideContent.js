@@ -28,7 +28,7 @@ const Cover = styled.div`
 	height: auto;
 
 	@media ${props => props.theme.laptap} {
-		width: 60rem;
+		width: 80rem;
 	}
 	@media ${props => props.theme.tabletL} {
 		width: 60rem;

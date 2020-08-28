@@ -63,7 +63,7 @@ const Cover = styled.div`
 	background-size: contain;
 
 	@media ${props => props.theme.laptap} {
-		width: 90rem;
+		width: 110rem;
 	}
 	@media ${props => props.theme.tabletL} {
 		width: 90rem;

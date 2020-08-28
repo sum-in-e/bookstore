@@ -27,6 +27,9 @@ const Img = styled.div`
 	background-size: contain;
 	background-position: center center;
 	background-repeat: no-repeat;
+	@media ${props => props.theme.laptap} {
+		width: 35%;
+	}
 `;
 
 const Info = styled.div`
@@ -35,6 +38,9 @@ const Info = styled.div`
 	justify-content: center;
 	width: 70%;
 	padding-left: 1.5rem;
+	@media ${props => props.theme.laptap} {
+		width: 65%;
+	}
 `;
 
 const Title = styled.h1`

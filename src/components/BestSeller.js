@@ -28,6 +28,9 @@ const SlideList = styled(Slider)`
 	}
 	& > ul {
 		bottom: -5rem;
+		@media ${props => props.theme.tabletL} {
+			bottom: 2rem;
+		}
 	}
 `;
 

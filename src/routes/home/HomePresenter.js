@@ -19,6 +19,9 @@ const SectionTop = styled.section`
 	width: 100%;
 	height: 75vh;
 	background-color: #f8f3ed;
+	@media ${props => props.theme.tabletL} {
+		height: 55vh;
+	}
 `;
 
 const SectionBottom = styled.section`

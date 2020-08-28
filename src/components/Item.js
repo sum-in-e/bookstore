@@ -5,28 +5,28 @@ import { Link } from 'react-router-dom';
 const Container = styled.div`
 	display: flex;
 	margin-bottom: 2rem;
+	padding: 1rem;
 	width: 80%;
 	height: 30vh;
-	padding: 1rem;
 	background-color: #f8f3ed;
 	border: 1px solid #caccd1;
 	border-radius: 10px;
 `;
 
 const Img = styled.div`
+	width: 15%;
+	height: auto;
 	background-image: url(${props => props.url});
 	background-repeat: no-repeat;
 	background-size: contain;
-	width: 15%;
-	height: auto;
 `;
 
 const Info = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width: 75%;
 	padding: 1rem 1rem 1rem 1.5rem;
+	width: 75%;
 `;
 
 const SLink = styled(Link)`

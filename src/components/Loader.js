@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-	height: 100vh;
-	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 28px;
 	margin-top: 20px;
+	height: 100vh;
+	width: 100%;
+	font-size: 28px;
 `;
 
 const Loader = () => (

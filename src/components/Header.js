@@ -7,7 +7,7 @@ const Container = styled.header`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 0 8rem;
+	padding: 0 10rem;
 	width: 100%;
 	height: 20vh;
 	font-family: 'Nanum Gothic Coding', monospace;
@@ -53,7 +53,7 @@ const Input = styled.input`
 const Header = ({ handleSubmit, handleChange }) => (
 	<Container>
 		<SLink to={'/'}>
-			<Logo></Logo>
+			<Logo />
 			<Title>Book Store</Title>
 		</SLink>
 		<form onSubmit={handleSubmit}>

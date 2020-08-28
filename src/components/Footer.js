@@ -62,7 +62,7 @@ const Input = styled.input`
 const Footer = () => (
 	<Container>
 		<Section>
-			<Logo></Logo>
+			<Logo />
 			<Title>Book Store</Title>
 		</Section>
 		<MailSection>

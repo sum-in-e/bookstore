@@ -10,8 +10,8 @@ class App extends Component {
 			<>
 				<ThemeProvider theme={theme}>
 					<Router />
+					<GlobalStyles />
 				</ThemeProvider>
-				<GlobalStyles />
 			</>
 		);
 	}

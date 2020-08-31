@@ -58,10 +58,14 @@ const Info = styled.div`
 `;
 
 const Title = styled.h1`
+	text-align: center;
 	font-size: 2.5rem;
 	color: #00317d;
 	@media ${props => props.theme.tabletM} {
 		font-size: 2rem;
+	}
+	@media ${props => props.theme.mobile} {
+		width: 80%;
 	}
 `;
 

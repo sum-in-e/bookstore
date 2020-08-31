@@ -35,6 +35,9 @@ const Img = styled.div`
 	@media ${props => props.theme.tabletS} {
 		width: 20%;
 	}
+	@media ${props => props.theme.mobile} {
+		width: 25%;
+	}
 `;
 
 const Info = styled.div`
@@ -45,6 +48,9 @@ const Info = styled.div`
 	width: 75%;
 	@media ${props => props.theme.tabletS} {
 		width: 70%;
+	}
+	@media ${props => props.theme.mobile} {
+		width: 80%;
 	}
 `;
 
@@ -105,8 +111,8 @@ const SaleStatus = styled.div`
 	align-items: center;
 	@media ${props => props.theme.mobile} {
 		position: absolute;
-		top: 1rem;
-		right: 1rem;
+		top: 0.5rem;
+		right: 0.5rem;
 		width: 15%;
 	}
 `;

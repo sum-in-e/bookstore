@@ -12,6 +12,9 @@ const Main = styled.main`
 		height: 100vh;
 		padding: 0 5rem;
 	}
+	@media ${props => props.theme.mobile} {
+		padding: 0 2rem;
+	}
 `;
 
 const HeaderSection = styled.section`
@@ -25,32 +28,54 @@ const HeaderSection = styled.section`
 	@media ${props => props.theme.tabletM} {
 		height: 10%;
 	}
+	@media ${props => props.theme.mobile} {
+		height: 13%;
+	}
 `;
 
 const Title = styled.h1`
 	padding-bottom: 1rem;
 	font-size: 2rem;
 	font-weight: bold;
+	@media ${props => props.theme.mobile} {
+		font-size: 1.7rem;
+	}
 `;
 
 const Article = styled.article`
 	display: flex;
 	padding-bottom: 0.4rem;
 	font-size: 1.1rem;
+	@media ${props => props.theme.mobile} {
+		font-size: 0.9rem;
+		flex-direction: column;
+	}
 `;
 
 const Author = styled.p`
 	padding-right: 0.5rem;
 	border-right: 1px solid black;
+	@media ${props => props.theme.mobile} {
+		padding: 0;
+		border: none;
+	}
 `;
 
 const Publisher = styled.p`
 	padding: 0 0.5rem;
 	border-right: 1px solid black;
+	@media ${props => props.theme.mobile} {
+		padding: 0.3rem 0;
+		border: none;
+	}
 `;
 
 const PubDate = styled.p`
 	padding: 0 0.5rem;
+	@media ${props => props.theme.mobile} {
+		padding: 0;
+		border: none;
+	}
 `;
 
 const InfoSection = styled.section`

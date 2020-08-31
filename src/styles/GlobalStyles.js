@@ -19,6 +19,9 @@ const globalStyles = createGlobalStyle`
         @media ${props => props.theme.tabletL} {
             font-size : 14px;
 	}
+    @media ${props => props.theme.mobile} {
+            font-size : 12px;
+	}
     }
 `;
 

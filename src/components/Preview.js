@@ -22,7 +22,6 @@ const Container = styled.div`
 const Img = styled.div`
 	width: 25%;
 	height: auto;
-	margin-top: 1.5rem;
 	background-image: url(${props => props.bgUrl});
 	background-size: contain;
 	background-position: center center;

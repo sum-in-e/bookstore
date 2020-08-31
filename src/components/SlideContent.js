@@ -20,7 +20,10 @@ const Container = styled.div`
 	padding-left: 2rem;
 	@media ${props => props.theme.tabletM} {
 		flex-direction: column;
-		padding-top: 3rem;
+		padding: 3rem 0 0 0;
+	}
+	@media ${props => props.theme.tabletS} {
+		padding-top: 5rem;
 	}
 `;
 
@@ -65,6 +68,7 @@ const Title = styled.h1`
 const Box = styled.div`
 	display: flex;
 	padding: 3rem 0 2rem 0;
+	text-align: center;
 	@media ${props => props.theme.tabletM} {
 		font-size: 0.9rem;
 		padding: 1rem;

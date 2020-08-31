@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Container = styled.div`
 	display: flex;
+	position: relative;
 	margin-bottom: 2rem;
 	padding: 1rem;
 	width: 80%;
@@ -18,6 +19,10 @@ const Container = styled.div`
 		height: 18vh;
 		width: 90%;
 	}
+	@media ${props => props.theme.tabletS} {
+		height: 20vh;
+		width: 100%;
+	}
 `;
 
 const Img = styled.div`
@@ -27,6 +32,9 @@ const Img = styled.div`
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;
+	@media ${props => props.theme.tabletS} {
+		width: 20%;
+	}
 `;
 
 const Info = styled.div`
@@ -35,6 +43,9 @@ const Info = styled.div`
 	justify-content: center;
 	padding: 1rem 1rem 1rem 1.5rem;
 	width: 75%;
+	@media ${props => props.theme.tabletS} {
+		width: 70%;
+	}
 `;
 
 const SLink = styled(Link)`
@@ -58,6 +69,9 @@ const Title = styled.h1`
 const Section = styled.div`
 	display: flex;
 	padding-bottom: 0.4rem;
+	@media ${props => props.theme.tabletS} {
+		font-size: 0.8rem;
+	}
 `;
 
 const Author = styled.p`
@@ -79,13 +93,22 @@ const Price = styled.p`
 	color: #e3900e;
 `;
 
-const Rank = styled.span``;
+const Rank = styled.span`
+	@media ${props => props.theme.tabletS} {
+		font-size: 0.8rem;
+	}
+`;
 
 const SaleStatus = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 10%;
+	@media ${props => props.theme.mobile} {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		width: 15%;
+	}
 `;
 
 const Item = ({

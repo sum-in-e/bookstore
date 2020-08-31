@@ -9,6 +9,9 @@ const Container = styled.article`
 		width: 100%;
 		height: 60%;
 	}
+	@media ${props => props.theme.tabletS} {
+		height: 55%;
+	}
 `;
 
 const Title = styled.h1`
@@ -28,12 +31,17 @@ const Grids = styled.div`
 		grid-template-rows: repeat(2, 1fr);
 		grid-template-columns: repeat(3, 1fr);
 	}
+	@media ${props => props.theme.tabletS} {
+		grid-template-rows: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+	}
 `;
 
 const Btn = styled.button`
 	position: absolute;
 	top: 0;
 	right: 1rem;
+	padding: 0.3rem 0;
 	width: 4rem;
 	height: 1.5rem;
 	background: none;

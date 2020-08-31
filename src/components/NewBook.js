@@ -6,6 +6,7 @@ const Container = styled.article`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	align-items: center;
 	position: relative;
 	width: 30%;
 	height: 95%;
@@ -13,10 +14,18 @@ const Container = styled.article`
 		width: 100%;
 		height: 40%;
 	}
+	@media ${props => props.theme.tabletS} {
+		height: 45%;
+	}
 `;
 
 const Title = styled.h1`
 	font-size: 1.5rem;
+	@media ${props => props.theme.tabletS} {
+		position: absolute;
+		top: -2rem;
+		left: 1rem;
+	}
 `;
 
 const Grids = styled.div`
@@ -32,12 +41,18 @@ const Grids = styled.div`
 		grid-template-rows: 1fr;
 		grid-template-columns: repeat(3, 1fr);
 	}
+	@media ${props => props.theme.tabletS} {
+		grid-template-rows: repeat(3, 1fr);
+		grid-template-columns: 1fr;
+		width: 90%;
+	}
 `;
 
 const Btn = styled.button`
 	position: absolute;
-	top: 0;
+	top: 0rem;
 	right: 1rem;
+	padding: 0.3rem 0;
 	width: 4rem;
 	height: 1.5rem;
 	background: none;
@@ -51,6 +66,9 @@ const Btn = styled.button`
 	&:hover {
 		background-color: #f8f3ed;
 		color: #e3900e;
+	}
+	@media ${props => props.theme.tabletS} {
+		top: -2rem;
 	}
 `;
 

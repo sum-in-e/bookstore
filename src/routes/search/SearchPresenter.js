@@ -19,6 +19,9 @@ const Title = styled.h1`
 	@media ${props => props.theme.tabletM} {
 		padding: 2rem 4rem;
 	}
+	@media ${props => props.theme.tabletS} {
+		padding: 2rem 1rem;
+	}
 `;
 
 const Section = styled.div`

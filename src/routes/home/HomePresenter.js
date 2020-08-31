@@ -25,6 +25,10 @@ const SectionTop = styled.section`
 	@media ${props => props.theme.tabletM} {
 		padding: 0 5rem;
 	}
+	@media ${props => props.theme.tabletS} {
+		padding: 0 2rem;
+		height: 60vh;
+	}
 `;
 
 const SectionBottom = styled.section`
@@ -39,7 +43,10 @@ const SectionBottom = styled.section`
 	@media ${props => props.theme.tabletM} {
 		flex-direction: column;
 		padding: 2rem 5rem;
-		height: 65vh;
+	}
+	@media ${props => props.theme.tabletS} {
+		padding: 2rem;
+		height: 140vh;
 	}
 `;
 

@@ -11,6 +11,9 @@ const Main = styled.main`
 	@media ${props => props.theme.tabletM} {
 		padding: 0 3rem;
 	}
+	@media ${props => props.theme.tabletS} {
+		padding: 0 1.5rem;
+	}
 `;
 
 const Title = styled.h1`
@@ -18,6 +21,9 @@ const Title = styled.h1`
 	font-size: 1.6rem;
 	@media ${props => props.theme.tabletM} {
 		padding: 2rem 4rem;
+	}
+	@media ${props => props.theme.tabletS} {
+		padding: 2rem 1rem;
 	}
 `;
 

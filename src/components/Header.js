@@ -15,6 +15,9 @@ const Container = styled.header`
 		padding: 0 5rem;
 		height: 15vh;
 	}
+	@media ${props => props.theme.tabletS} {
+		padding: 0 2rem;
+	}
 `;
 
 const SLink = styled(Link)`
@@ -36,6 +39,10 @@ const Logo = styled(Books)`
 	width: 4.5rem;
 	height: 4.5rem;
 	color: #e3900e;
+	@media ${props => props.theme.tabletS} {
+		width: 3rem;
+		height: 3rem;
+	}
 `;
 
 const Title = styled.h1`
@@ -44,6 +51,10 @@ const Title = styled.h1`
 	font-size: 1.7rem;
 	font-weight: 700;
 	color: #00317d;
+	@media ${props => props.theme.tabletS} {
+		width: 3rem;
+		font-size: 1.2rem;
+	}
 `;
 
 const Input = styled.input`
@@ -55,6 +66,9 @@ const Input = styled.input`
 	@media ${props => props.theme.tabletM} {
 		width: 40vw;
 		height: 5vh;
+	}
+	@media ${props => props.theme.tabletS} {
+		height: 4vh;
 	}
 `;
 

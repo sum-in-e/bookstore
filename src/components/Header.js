@@ -40,8 +40,8 @@ const Logo = styled(Books)`
 	height: 4.5rem;
 	color: #e3900e;
 	@media ${props => props.theme.tabletS} {
-		width: 3rem;
-		height: 3rem;
+		width: 3.5rem;
+		height: 3.5rem;
 	}
 `;
 
@@ -52,8 +52,8 @@ const Title = styled.h1`
 	font-weight: 700;
 	color: #00317d;
 	@media ${props => props.theme.tabletS} {
-		width: 3rem;
-		font-size: 1.2rem;
+		width: 3.5rem;
+		font-size: 1.4rem;
 	}
 `;
 
@@ -69,6 +69,7 @@ const Input = styled.input`
 	}
 	@media ${props => props.theme.tabletS} {
 		height: 4vh;
+		width: 50vw;
 	}
 `;
 

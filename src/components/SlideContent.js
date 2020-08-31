@@ -58,7 +58,6 @@ const Info = styled.div`
 `;
 
 const Title = styled.h1`
-	text-align: center;
 	font-size: 2.5rem;
 	color: #00317d;
 	@media ${props => props.theme.tabletM} {
@@ -66,6 +65,7 @@ const Title = styled.h1`
 	}
 	@media ${props => props.theme.mobile} {
 		width: 80%;
+		text-align: center;
 	}
 `;
 

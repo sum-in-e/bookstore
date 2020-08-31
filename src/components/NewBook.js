@@ -6,7 +6,6 @@ const Container = styled.article`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	align-items: center;
 	position: relative;
 	width: 30%;
 	height: 95%;
@@ -15,6 +14,7 @@ const Container = styled.article`
 		height: 40%;
 	}
 	@media ${props => props.theme.tabletS} {
+		align-items: center;
 		height: 45%;
 	}
 `;

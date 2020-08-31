@@ -63,13 +63,13 @@ const Input = styled.input`
 	outline: none;
 	font-size: 1.3rem;
 	border: #9f9fa3 1px solid;
-	@media ${props => props.theme.tabletM} {
-		width: 40vw;
+	@media ${props => props.theme.tabletL} {
+		width: 45vw;
 		height: 5vh;
 	}
 	@media ${props => props.theme.tabletS} {
-		height: 4vh;
 		width: 50vw;
+		height: 4vh;
 	}
 `;
 

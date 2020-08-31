@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const Container = styled.article`
 	position: relative;
 	width: 60%;
+	height: 95%;
 	@media ${props => props.theme.tabletM} {
 		width: 100%;
 		height: 60%;

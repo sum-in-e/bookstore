@@ -26,10 +26,7 @@ const HeaderSection = styled.section`
 	padding: 1rem 0;
 	border-bottom: 1px solid grey;
 	@media ${props => props.theme.tabletM} {
-		height: 10%;
-	}
-	@media ${props => props.theme.mobile} {
-		height: 13%;
+		height: 15%;
 	}
 `;
 

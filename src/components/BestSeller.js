@@ -45,7 +45,6 @@ const Btn = styled.button`
 	top: 6rem;
 	right: 13rem;
 	padding: 0.3rem 0;
-
 	width: 4rem;
 	height: 1.5rem;
 	background: none;

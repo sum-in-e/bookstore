@@ -6,7 +6,7 @@
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.5.0",
 		"@testing-library/user-event": "^7.2.1",
-		"axios": "^0.19.2",
+		"axios": "^0.21.1",
 		"dotenv": "^8.2.0",
 		"eslint-config-prettier": "^6.11.0",
 		"react": "^16.13.1",
@@ -21,7 +21,9 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
-		"build": "react-scripts build"
+		"build": "react-scripts build",
+		"deploy" : "aws s3 sync ./build s3://bookstore-with-cra --profile=sample-deploy-s3",
+		"invalidate": "aws cloudfront create-invalidation --profile=sample-deploy-s3 --distribution-id E25M63MQVINBR6 --paths / /index.html /error.html /service-worker.js /manifest.json /favicon.ico"
 	},
 	"eslintConfig": {
 		"extends": "react-app"

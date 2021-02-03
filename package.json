@@ -22,13 +22,14 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"deploy" : "aws s3 sync ./build s3://bookstore-with-cra --profile=sample-deploy-s3",
-		"invalidate": "aws cloudfront create-invalidation --profile=sample-deploy-s3 --distribution-id E25M63MQVINBR6 --paths / /index.html /error.html /service-worker.js /manifest.json /favicon.ico"
+		"predeploy" : "npm run build",
+		"deploy" : "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
 	},
 	"proxy": "http://book.interpark.com",
+	"homepage": "http://sumpson0-0.github.io/bookstore",
 	"browserslist": {
 		"production": [
 			">0.2%",

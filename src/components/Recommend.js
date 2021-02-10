@@ -26,7 +26,12 @@ const Container = styled.article`
 `;
 
 const Title = styled.h1`
+	width: 100%;
 	font-size: 1.5rem;
+	@media ${props => props.theme.tabletS} {
+		position: absolute;
+		left: 1rem;
+	}
 `;
 
 const Grids = styled.div`

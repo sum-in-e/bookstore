@@ -2,6 +2,49 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+const Preview = ({
+	title,
+	author,
+	price,
+	publisher,
+	description,
+	pubDate,
+	saleStatus,
+	reviewRank,
+	coverImageS,
+	coverImageL,
+	isbn,
+	buyLink,
+}) => (
+	<Container>
+		<Img bgUrl={coverImageS ? coverImageS : require('../assets/image_not_found.jpg')} />
+		<Info>
+			<SLink
+				to={{
+					pathname: `/book/${title}`,
+					state: {
+						title,
+						author,
+						price,
+						publisher,
+						description,
+						pubDate,
+						saleStatus,
+						reviewRank,
+						coverImageL,
+						isbn,
+						buyLink,
+					},
+				}}
+			>
+				<Title>{title}</Title>
+			</SLink>
+			<Author>{author}</Author>
+			<Price>{`${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
+		</Info>
+	</Container>
+);
+
 const SLink = styled(Link)`
 	text-decoration: none;
 	&:focus,
@@ -63,48 +106,5 @@ const Author = styled.p`
 const Price = styled.p`
 	color: #e3900e;
 `;
-
-const Preview = ({
-	title,
-	author,
-	price,
-	publisher,
-	description,
-	pubDate,
-	saleStatus,
-	reviewRank,
-	coverImageS,
-	coverImageL,
-	isbn,
-	buyLink,
-}) => (
-	<Container>
-		<Img bgUrl={coverImageS ? coverImageS : require('../assets/image_not_found.jpg')} />
-		<Info>
-			<SLink
-				to={{
-					pathname: `/book/${title}`,
-					state: {
-						title,
-						author,
-						price,
-						publisher,
-						description,
-						pubDate,
-						saleStatus,
-						reviewRank,
-						coverImageL,
-						isbn,
-						buyLink,
-					},
-				}}
-			>
-				<Title>{title}</Title>
-			</SLink>
-			<Author>{author}</Author>
-			<Price>{`${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
-		</Info>
-	</Container>
-);
 
 export default Preview;

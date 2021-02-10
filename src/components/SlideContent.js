@@ -2,6 +2,54 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+const SlideContent = ({
+	title,
+	author,
+	price,
+	publisher,
+	description,
+	pubDate,
+	saleStatus,
+	reviewRank,
+	coverImageS,
+	coverImageL,
+	isbn,
+	buyLink,
+}) => (
+	<SLink
+		to={{
+			pathname: `/book/${title}`,
+			state: {
+				title,
+				author,
+				price,
+				publisher,
+				description,
+				pubDate,
+				saleStatus,
+				reviewRank,
+				coverImageL,
+				isbn,
+				buyLink,
+			},
+		}}
+	>
+		<Container>
+			<Cover url={coverImageL ? coverImageL : require('../assets/image_not_found.jpg')} />
+			<Info>
+				<Title>{title}</Title>
+				<Box>
+					<Author>{author ? author : '저자 미상'}</Author>
+					<Publisher>{publisher}</Publisher>
+					<PubDate>{`${pubDate.slice(0, 4)}년 ${pubDate.slice(4, 6)}월`}</PubDate>
+				</Box>
+				<Description>{description}</Description>
+				<Price>{`${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
+			</Info>
+		</Container>
+	</SLink>
+);
+
 const SLink = styled(Link)`
 	text-decoration: none;
 	color: black;
@@ -107,53 +155,5 @@ const Price = styled.p`
 	font-size: 1.2rem;
 	color: #e3900e;
 `;
-
-const SlideContent = ({
-	title,
-	author,
-	price,
-	publisher,
-	description,
-	pubDate,
-	saleStatus,
-	reviewRank,
-	coverImageS,
-	coverImageL,
-	isbn,
-	buyLink,
-}) => (
-	<SLink
-		to={{
-			pathname: `/book/${title}`,
-			state: {
-				title,
-				author,
-				price,
-				publisher,
-				description,
-				pubDate,
-				saleStatus,
-				reviewRank,
-				coverImageL,
-				isbn,
-				buyLink,
-			},
-		}}
-	>
-		<Container>
-			<Cover url={coverImageL ? coverImageL : require('../assets/image_not_found.jpg')} />
-			<Info>
-				<Title>{title}</Title>
-				<Box>
-					<Author>{author ? author : '저자 미상'}</Author>
-					<Publisher>{publisher}</Publisher>
-					<PubDate>{`${pubDate.slice(0, 4)}년 ${pubDate.slice(4, 6)}월`}</PubDate>
-				</Box>
-				<Description>{description}</Description>
-				<Price>{`${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
-			</Info>
-		</Container>
-	</SLink>
-);
 
 export default SlideContent;

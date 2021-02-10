@@ -1,6 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Loader = () => (
+	<Container>
+		<span role="img" aria-label="Loading">
+			⏳
+		</span>
+	</Container>
+);
+
 const Container = styled.div`
 	display: flex;
 	justify-content: center;
@@ -10,13 +18,5 @@ const Container = styled.div`
 	width: 100%;
 	font-size: 28px;
 `;
-
-const Loader = () => (
-	<Container>
-		<span role="img" aria-label="Loading">
-			⏳
-		</span>
-	</Container>
-);
 
 export default Loader;

@@ -2,6 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+const NewBook = ({ title, children }) => (
+	<Container>
+		<Title>{title}</Title>
+		<Grids>{children}</Grids>
+		<Link to={'/list/newBook'}>
+			<Btn>More</Btn>
+		</Link>
+	</Container>
+);
+
 const Container = styled.article`
 	display: flex;
 	flex-direction: column;
@@ -52,7 +62,6 @@ const Btn = styled.button`
 	position: absolute;
 	top: 0rem;
 	right: 1rem;
-	padding: 0.3rem 0;
 	width: 4rem;
 	height: 1.5rem;
 	background: none;
@@ -71,15 +80,5 @@ const Btn = styled.button`
 		top: -2rem;
 	}
 `;
-
-const NewBook = ({ title, children }) => (
-	<Container>
-		<Title>{title}</Title>
-		<Grids>{children}</Grids>
-		<Link to={'/list/newBook'}>
-			<Btn>More</Btn>
-		</Link>
-	</Container>
-);
 
 export default NewBook;

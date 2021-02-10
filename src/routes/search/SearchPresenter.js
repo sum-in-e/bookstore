@@ -5,44 +5,6 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Item from 'components/Item';
 
-const Main = styled.main`
-	padding: 0 10rem;
-	background-color: #f8f3ed;
-	@media ${props => props.theme.tabletM} {
-		padding: 0 3rem;
-	}
-`;
-
-const Title = styled.h1`
-	padding: 2rem 8rem;
-	font-size: 1.6rem;
-	@media ${props => props.theme.tabletM} {
-		padding: 2rem 4rem;
-	}
-	@media ${props => props.theme.tabletS} {
-		padding: 2rem 1rem;
-	}
-`;
-
-const Section = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	min-height: 50vh;
-	@media ${props => props.theme.tabletM} {
-		min-height: 60vh;
-	}
-`;
-
-const NoResults = styled.h1`
-	height: 50vh;
-	padding: 2rem 0 2rem 7.5rem;
-	font-size: 1.6rem;
-	@media ${props => props.theme.tabletM} {
-		height: 65vh;
-	}
-`;
-
 const SearchPresenter = ({ results, params, loading, handleSubmit, handleChange }) => (
 	<>
 		{loading ? (
@@ -82,5 +44,43 @@ const SearchPresenter = ({ results, params, loading, handleSubmit, handleChange 
 		)}
 	</>
 );
+
+const Main = styled.main`
+	padding: 0 10rem;
+	background-color: #f8f3ed;
+	@media ${props => props.theme.tabletM} {
+		padding: 0 3rem;
+	}
+`;
+
+const Title = styled.h1`
+	padding: 2rem 8rem;
+	font-size: 1.6rem;
+	@media ${props => props.theme.tabletM} {
+		padding: 2rem 4rem;
+	}
+	@media ${props => props.theme.tabletS} {
+		padding: 2rem 1rem;
+	}
+`;
+
+const Section = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 50vh;
+	@media ${props => props.theme.tabletM} {
+		min-height: 60vh;
+	}
+`;
+
+const NoResults = styled.h1`
+	height: 50vh;
+	padding: 2rem 0 2rem 7.5rem;
+	font-size: 1.6rem;
+	@media ${props => props.theme.tabletM} {
+		height: 65vh;
+	}
+`;
 
 export default SearchPresenter;

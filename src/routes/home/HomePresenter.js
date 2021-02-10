@@ -9,47 +9,6 @@ import ArticleNewBook from 'components/NewBook';
 import Preview from 'components/Preview';
 import SlideContent from 'components/SlideContent';
 
-const Main = styled.main``;
-
-const SectionTop = styled.section`
-	display: flex;
-	align-items: center;
-	position: relative;
-	padding: 0 10rem;
-	width: 100%;
-	height: 75vh;
-	background-color: #f8f3ed;
-	@media ${props => props.theme.tabletL} {
-		height: 55vh;
-	}
-	@media ${props => props.theme.tabletM} {
-		padding: 0 5rem;
-	}
-	@media ${props => props.theme.tabletS} {
-		padding: 0 2rem;
-		height: 60vh;
-	}
-`;
-
-const SectionBottom = styled.section`
-	display: flex;
-	justify-content: space-between;
-	padding: 2rem 10rem;
-	width: 100%;
-	height: 90vh;
-	@media ${props => props.theme.tabletL} {
-		height: 65vh;
-	}
-	@media ${props => props.theme.tabletM} {
-		flex-direction: column;
-		padding: 2rem 5rem;
-	}
-	@media ${props => props.theme.tabletS} {
-		padding: 2rem;
-		height: 140vh;
-	}
-`;
-
 const HomePresenter = ({ bestseller, recommendation, newBook, loading, settings, handleSubmit, handleChange }) => (
 	<>
 		{loading ? (
@@ -131,5 +90,46 @@ const HomePresenter = ({ bestseller, recommendation, newBook, loading, settings,
 		)}
 	</>
 );
+
+const Main = styled.main``;
+
+const SectionTop = styled.section`
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: 0 10rem;
+	width: 100%;
+	height: 75vh;
+	background-color: #f8f3ed;
+	@media ${props => props.theme.tabletL} {
+		height: 55vh;
+	}
+	@media ${props => props.theme.tabletM} {
+		padding: 0 5rem;
+	}
+	@media ${props => props.theme.tabletS} {
+		padding: 0 2rem;
+		height: 60vh;
+	}
+`;
+
+const SectionBottom = styled.section`
+	display: flex;
+	justify-content: space-between;
+	padding: 2rem 10rem;
+	width: 100%;
+	height: 90vh;
+	@media ${props => props.theme.tabletL} {
+		height: 65vh;
+	}
+	@media ${props => props.theme.tabletM} {
+		flex-direction: column;
+		padding: 2rem 5rem;
+	}
+	@media ${props => props.theme.tabletS} {
+		padding: 2rem;
+		height: 140vh;
+	}
+`;
 
 export default HomePresenter;

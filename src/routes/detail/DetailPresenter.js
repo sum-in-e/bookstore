@@ -4,6 +4,59 @@ import Loader from 'components/Loader';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
+const DetailPresenter = ({ bookDetail, loading, handleClick, handleSubmit, handleChange }) => (
+	<>
+		{loading ? (
+			<Loader />
+		) : (
+			<>
+				<Header handleSubmit={handleSubmit} handleChange={handleChange} />
+				<Main>
+					{bookDetail ? (
+						<>
+							<HeaderSection>
+								<Title>{bookDetail.title}</Title>
+								<Article>
+									<Author>{bookDetail.author ? bookDetail.author : '저자 미상'}</Author>
+									<Publisher>{bookDetail.publisher}</Publisher>
+									<PubDate>
+										{`${bookDetail.pubDate.slice(0, 4)}-${bookDetail.pubDate.slice(
+											4,
+											6,
+										)}-${bookDetail.pubDate.slice(6, 8)}`}
+									</PubDate>
+								</Article>
+							</HeaderSection>
+							<InfoSection>
+								<Cover
+									url={
+										bookDetail.coverImageL
+											? bookDetail.coverImageL
+											: require('../../assets/image_not_found.jpg')
+									}
+								/>
+								<Info>
+									<SaleStatus>{bookDetail.saleStatus}</SaleStatus>
+									<Price>{`판매가       ${bookDetail.price
+										.toString()
+										.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
+									<Isbn>{`isbn       ${bookDetail.isbn}`}</Isbn>
+									<Description>{bookDetail.description}</Description>
+									<span role="img" aria-label="rank">{`⭐️ ${bookDetail.reviewRank}/10`}</span>
+									<BuyBtn onClick={handleClick}>구매하기</BuyBtn>
+								</Info>
+							</InfoSection>
+						</>
+					) : (
+						'데이터를 가져올 수 없습니다.'
+					)}
+				</Main>
+				<Footer />
+			</>
+		)}
+	</>
+);
+
 const Main = styled.main`
 	width: 100%;
 	height: 80vh;
@@ -155,58 +208,5 @@ const BuyBtn = styled.button`
 	outline: none;
 	cursor: pointer;
 `;
-
-const DetailPresenter = ({ bookDetail, loading, handleClick, handleSubmit, handleChange }) => (
-	<>
-		{loading ? (
-			<Loader />
-		) : (
-			<>
-				<Header handleSubmit={handleSubmit} handleChange={handleChange} />
-				<Main>
-					{bookDetail ? (
-						<>
-							<HeaderSection>
-								<Title>{bookDetail.title}</Title>
-								<Article>
-									<Author>{bookDetail.author ? bookDetail.author : '저자 미상'}</Author>
-									<Publisher>{bookDetail.publisher}</Publisher>
-									<PubDate>
-										{`${bookDetail.pubDate.slice(0, 4)}-${bookDetail.pubDate.slice(
-											4,
-											6,
-										)}-${bookDetail.pubDate.slice(6, 8)}`}
-									</PubDate>
-								</Article>
-							</HeaderSection>
-							<InfoSection>
-								<Cover
-									url={
-										bookDetail.coverImageL
-											? bookDetail.coverImageL
-											: require('../../assets/image_not_found.jpg')
-									}
-								/>
-								<Info>
-									<SaleStatus>{bookDetail.saleStatus}</SaleStatus>
-									<Price>{`판매가       ${bookDetail.price
-										.toString()
-										.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
-									<Isbn>{`isbn       ${bookDetail.isbn}`}</Isbn>
-									<Description>{bookDetail.description}</Description>
-									<span role="img" aria-label="rank">{`⭐️ ${bookDetail.reviewRank}/10`}</span>
-									<BuyBtn onClick={handleClick}>구매하기</BuyBtn>
-								</Info>
-							</InfoSection>
-						</>
-					) : (
-						'데이터를 가져올 수 없습니다.'
-					)}
-				</Main>
-				<Footer />
-			</>
-		)}
-	</>
-);
 
 export default DetailPresenter;

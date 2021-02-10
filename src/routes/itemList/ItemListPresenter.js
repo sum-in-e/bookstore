@@ -5,34 +5,6 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Item from 'components/Item';
 
-const Main = styled.main`
-	padding: 0 10rem;
-	background-color: #f8f3ed;
-	@media ${props => props.theme.tabletM} {
-		padding: 0 3rem;
-	}
-	@media ${props => props.theme.tabletS} {
-		padding: 0 1.5rem;
-	}
-`;
-
-const Title = styled.h1`
-	padding: 2rem 8rem;
-	font-size: 1.6rem;
-	@media ${props => props.theme.tabletM} {
-		padding: 2rem 4rem;
-	}
-	@media ${props => props.theme.tabletS} {
-		padding: 2rem 1rem;
-	}
-`;
-
-const Section = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-`;
-
 const ItemListPresenter = ({ items, params, loading, handleSubmit, handleChange }) => (
 	<>
 		{loading ? (
@@ -71,5 +43,33 @@ const ItemListPresenter = ({ items, params, loading, handleSubmit, handleChange 
 		)}
 	</>
 );
+
+const Main = styled.main`
+	padding: 0 10rem;
+	background-color: #f8f3ed;
+	@media ${props => props.theme.tabletM} {
+		padding: 0 3rem;
+	}
+	@media ${props => props.theme.tabletS} {
+		padding: 0 1.5rem;
+	}
+`;
+
+const Title = styled.h1`
+	padding: 2rem 8rem;
+	font-size: 1.6rem;
+	@media ${props => props.theme.tabletM} {
+		padding: 2rem 4rem;
+	}
+	@media ${props => props.theme.tabletS} {
+		padding: 2rem 1rem;
+	}
+`;
+
+const Section = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+`;
 
 export default ItemListPresenter;

@@ -3,6 +3,15 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 
+const BestSeller = ({ title, children, settings }) => (
+	<Container>
+		<SlideList {...settings}>{children}</SlideList>
+		<SLink to={'/list/bestSeller'}>
+			<Btn>More</Btn>
+		</SLink>
+	</Container>
+);
+
 const Container = styled.article`
 	width: 100%;
 `;
@@ -39,12 +48,15 @@ const SlideList = styled(Slider)`
 		}
 	}
 `;
+const SLink = styled(Link)``;
 
 const Btn = styled.button`
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	position: absolute;
 	top: 6rem;
 	right: 13rem;
-	padding: 0.3rem 0;
 	width: 4rem;
 	height: 1.5rem;
 	background: none;
@@ -68,14 +80,5 @@ const Btn = styled.button`
 		right: 5rem;
 	}
 `;
-
-const BestSeller = ({ title, children, settings }) => (
-	<Container>
-		<SlideList {...settings}>{children}</SlideList>
-		<Link to={'/list/bestSeller'}>
-			<Btn>More</Btn>
-		</Link>
-	</Container>
-);
 
 export default BestSeller;

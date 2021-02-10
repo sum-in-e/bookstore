@@ -2,7 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import { Books } from '@styled-icons/icomoon';
 
-const Container = styled.div`
+const Footer = () => (
+	<Container>
+		<Section>
+			<Logo />
+			<Title>Book Store</Title>
+		</Section>
+		<MailSection>
+			<P>Subscribe to Reading Newspapers</P>
+			<Input type="text" placeholder="example@gmail.com"></Input>
+		</MailSection>
+	</Container>
+);
+
+const Container = styled.footer`
 	display: flex;
 	justify-content: center;
 	padding: 0 10rem;
@@ -80,18 +93,5 @@ const Input = styled.input`
 		width: 50vw;
 	}
 `;
-
-const Footer = () => (
-	<Container>
-		<Section>
-			<Logo />
-			<Title>Book Store</Title>
-		</Section>
-		<MailSection>
-			<P>Subscribe to Reading Newspapers</P>
-			<Input type="text" placeholder="example@gmail.com"></Input>
-		</MailSection>
-	</Container>
-);
 
 export default Footer;

@@ -2,6 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+const Recommend = ({ title, children }) => (
+	<Container>
+		<Title>{title}</Title>
+		<Grids>{children}</Grids>
+		<Link to={'/list/recommend'}>
+			<Btn>More</Btn>
+		</Link>
+	</Container>
+);
+
 const Container = styled.article`
 	position: relative;
 	width: 60%;
@@ -42,7 +52,6 @@ const Btn = styled.button`
 	position: absolute;
 	top: 0;
 	right: 1rem;
-	padding: 0.3rem 0;
 	width: 4rem;
 	height: 1.5rem;
 	background: none;
@@ -58,15 +67,5 @@ const Btn = styled.button`
 		color: #e3900e;
 	}
 `;
-
-const Recommend = ({ title, children }) => (
-	<Container>
-		<Title>{title}</Title>
-		<Grids>{children}</Grids>
-		<Link to={'/list/recommend'}>
-			<Btn>More</Btn>
-		</Link>
-	</Container>
-);
 
 export default Recommend;

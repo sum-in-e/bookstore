@@ -3,6 +3,18 @@ import styled from 'styled-components';
 import { Books } from '@styled-icons/icomoon';
 import { Link } from 'react-router-dom';
 
+const Header = ({ handleSubmit, handleChange }) => (
+	<Container>
+		<SLink to={'/'}>
+			<Logo />
+			<Title>Book Store</Title>
+		</SLink>
+		<form onSubmit={handleSubmit}>
+			<Input onChange={handleChange} type="text"></Input>
+		</form>
+	</Container>
+);
+
 const Container = styled.header`
 	display: flex;
 	justify-content: center;
@@ -72,17 +84,5 @@ const Input = styled.input`
 		height: 4vh;
 	}
 `;
-
-const Header = ({ handleSubmit, handleChange }) => (
-	<Container>
-		<SLink to={'/'}>
-			<Logo />
-			<Title>Book Store</Title>
-		</SLink>
-		<form onSubmit={handleSubmit}>
-			<Input onChange={handleChange} type="text"></Input>
-		</form>
-	</Container>
-);
 
 export default Header;

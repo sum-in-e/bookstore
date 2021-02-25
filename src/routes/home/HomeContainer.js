@@ -47,11 +47,13 @@ class HomeContainer extends React.Component {
 			const {
 				data: { item: getNewBook },
 			} = await booksApi.getList('newBook');
-			this.setState({
-				bestseller: getBestseller.slice(0, 10),
-				recommendation: getRecommendation.slice(0, 6),
-				newBook: getNewBook.slice(0, 3),
-			});
+			if (getBestseller && getRecommendation && getNewBook) {
+				this.setState({
+					bestseller: getBestseller.slice(0, 10),
+					recommendation: getRecommendation.slice(0, 6),
+					newBook: getNewBook.slice(0, 3),
+				});
+			}
 			window.scrollTo(0, 0);
 		} catch (error) {
 			console.log(error);

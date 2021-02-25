@@ -38,6 +38,7 @@ const SlideList = styled(Slider)`
 			height: 100%;
 		}
 	}
+
 	& > ul {
 		bottom: -5rem;
 		@media ${props => props.theme.tabletL} {

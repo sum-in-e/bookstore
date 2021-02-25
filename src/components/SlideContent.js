@@ -43,7 +43,7 @@ const SlideContent = ({
 					<Publisher>{publisher}</Publisher>
 					<PubDate>{`${pubDate.slice(0, 4)}년 ${pubDate.slice(4, 6)}월`}</PubDate>
 				</Box>
-				<Description>{description}</Description>
+				<Description>{description.substr(0, 180)}...</Description>
 				<Price>{`${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
 			</Info>
 		</Container>
@@ -65,7 +65,6 @@ const SLink = styled(Link)`
 const Container = styled.div`
 	display: flex;
 	width: 100%;
-	padding-left: 2rem;
 	@media ${props => props.theme.tabletM} {
 		flex-direction: column;
 		padding: 3rem 0 0 0;
@@ -80,12 +79,8 @@ const Cover = styled.div`
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;
-	width: 50rem;
+	width: 40rem;
 	height: auto;
-
-	@media ${props => props.theme.laptap} {
-		width: 80rem;
-	}
 	@media ${props => props.theme.tabletL} {
 		width: 90rem;
 	}
@@ -96,7 +91,6 @@ const Cover = styled.div`
 `;
 
 const Info = styled.div`
-	padding-left: 2rem;
 	@media ${props => props.theme.tabletM} {
 		display: flex;
 		flex-direction: column;
@@ -143,7 +137,7 @@ const PubDate = styled.p`
 
 const Description = styled.p`
 	font-size: 0.9rem;
-	line-height: 1rem;
+	line-height: 1.3rem;
 	padding-bottom: 1rem;
 	@media ${props => props.theme.tabletM} {
 		display: none;

@@ -40,7 +40,7 @@ const DetailPresenter = ({ bookDetail, loading, handleClick, handleSubmit, handl
 									<Price>{`판매가       ${bookDetail.price
 										.toString()
 										.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
-									<Isbn>{`isbn       ${bookDetail.isbn}`}</Isbn>
+									<Isbn>{`ISBN       ${bookDetail.isbn}`}</Isbn>
 									<Description>{bookDetail.description}</Description>
 									<span role="img" aria-label="rank">{`⭐️ ${bookDetail.reviewRank}/10`}</span>
 									<BuyBtn onClick={handleClick}>구매하기</BuyBtn>
@@ -59,8 +59,7 @@ const DetailPresenter = ({ bookDetail, loading, handleClick, handleSubmit, handl
 
 const Main = styled.main`
 	width: 100%;
-	height: 80vh;
-	padding: 0 10rem;
+	padding: 0 10rem 2rem 10rem;
 	@media ${props => props.theme.tabletM} {
 		height: 100vh;
 		padding: 0 5rem;
@@ -75,12 +74,9 @@ const HeaderSection = styled.section`
 	flex-direction: column;
 	justify-content: center;
 	width: 100%;
-	height: 20%;
+	height: 15%;
 	padding: 1rem 0;
 	border-bottom: 1px solid grey;
-	@media ${props => props.theme.tabletM} {
-		height: 15%;
-	}
 `;
 
 const Title = styled.h1`
@@ -193,14 +189,14 @@ const Isbn = styled.p`
 `;
 
 const Description = styled.p`
-	line-height: 1.1rem;
+	line-height: 1.3rem;
 	padding-bottom: 1.5rem;
 `;
 
 const BuyBtn = styled.button`
 	width: 7.5rem;
 	height: 3rem;
-	margin-top: 2.5rem;
+	margin-top: 1rem;
 	border: 1px solid grey;
 	background-color: #00317d;
 	color: white;

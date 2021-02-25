@@ -35,6 +35,8 @@ class SearchContainer extends React.Component {
 			this.setState({ results, params: searchTerm });
 		} catch (error) {
 			console.log(error);
+			alert('데이터를 불러오는 도중 오류가 발생했습니다. 초기 화면으로 돌아갑니다.');
+			this.props.history.push(`/`);
 		} finally {
 			this.setState({ loading: false });
 		}
@@ -48,7 +50,8 @@ class SearchContainer extends React.Component {
 			} = await booksApi.search(params);
 			this.setState({ results, params });
 		} catch (error) {
-			console.log(error);
+			alert('데이터를 불러오는 도중 오류가 발생했습니다. 초기 화면으로 돌아갑니다.');
+			this.props.history.push(`/`);
 		} finally {
 			this.setState({ loading: false });
 		}

@@ -7,6 +7,8 @@ const globalStyles = createGlobalStyle`
     ${reset};
     *{
         box-sizing : border-box;
+        word-break: keep-all;
+        word-wrap: break-word;
     }
     body {
         font-family: 'Noto Sans KR', sans-serif;

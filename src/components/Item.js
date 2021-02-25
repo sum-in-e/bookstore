@@ -138,10 +138,16 @@ const Author = styled.p`
 const Publisher = styled.p`
 	padding: 0 0.5rem;
 	border-right: 1px solid black;
+	@media ${props => props.theme.tabletM} {
+		border: none;
+	}
 `;
 
 const PubDate = styled.p`
 	padding: 0 0.5rem;
+	@media ${props => props.theme.tabletM} {
+		display: none;
+	}
 `;
 
 const Price = styled.p`

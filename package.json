@@ -28,7 +28,6 @@
 	"eslintConfig": {
 		"extends": "react-app"
 	},
-	"proxy": "http://book.interpark.com",
 	"browserslist": {
 		"production": [
 			">0.2%",

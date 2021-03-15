@@ -14,11 +14,5 @@ export const booksApi = {
 			},
 		}),
 	getList: category =>
-		api.get(`${category}.api`, {
-			params: {
-				key: process.env.REACT_APP_API_KEY,
-				categoryId: '100',
-				output: 'json',
-			},
-		}),
+		api.get(`sendBooks`),
 };

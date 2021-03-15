@@ -38,22 +38,14 @@ class HomeContainer extends React.Component {
 
 	async componentDidMount() {
 		try {
-			const {
-				data: { item: getBestseller },
-			} = await booksApi.getList('bestSeller');
-			const {
-				data: { item: getRecommendation },
-			} = await booksApi.getList('recommend');
-			const {
-				data: { item: getNewBook },
-			} = await booksApi.getList('newBook');
-			if (getBestseller && getRecommendation && getNewBook) {
+			const promises = [booksApi.getList('bestSeller'), booksApi.getList('recommend'), booksApi.getList('newBook')];
+			Promise.all(promises).then(result => 
 				this.setState({
-					bestseller: getBestseller.slice(0, 10),
-					recommendation: getRecommendation.slice(0, 6),
-					newBook: getNewBook.slice(0, 3),
-				});
-			}
+					bestseller: result[0].data.item.slice(0, 10),
+					recommendation: result[1].data.item.slice(0, 6),
+					newBook: result[2].data.item.slice(0, 3)
+				}) 
+			);
 			window.scrollTo(0, 0);
 		} catch (error) {
 			console.log(error);

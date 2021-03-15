@@ -1,9 +1,9 @@
 import React from 'react';
 import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
-import Home from 'routes/home';
-import Search from 'routes/search';
-import ItemList from 'routes/itemList';
-import Detail from 'routes/detail';
+import Home from 'pages/home';
+import Search from 'pages/search';
+import ItemList from 'pages/itemList';
+import Detail from 'pages/detail';
 
 export default () => (
 	<Router>

@@ -81,9 +81,11 @@ const Input = styled.input`
 	outline: none;
 	font-size: 1.2rem;
 	border: none;
+	border-radius : 0;
 	border-bottom: 1px white solid;
 	background: none;
 	color: white;
+	-webkit-appearance: none;
 	&::placeholder {
 		font-size: 0.8rem;
 		color: rgb(208, 210, 211, 0.5);

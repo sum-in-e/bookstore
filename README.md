@@ -8,6 +8,7 @@
 
 <br>
 
-## [Go to preview](https://www.notion.so/Preview-Bookstore-aa7f47ff29ea41089a97ed9f0476ae60)
+<span>[Go to preview](https://www.notion.so/Preview-Bookstore-aa7f47ff29ea41089a97ed9f0476ae60)</span> / 
+<span>[Go to website](https://bookstore-iota.vercel.app/)</span>
 
 ![](src/assets/preview.png)

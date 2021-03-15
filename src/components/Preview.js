@@ -15,7 +15,13 @@ const Preview = ({
 	coverImageL,
 	isbn,
 	buyLink,
-}) => (
+}) => {
+	const formatNumber = () => {
+		return price
+			.toString()
+			.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+	}
+	return (
 	<Container>
 		<Img bgUrl={coverImageS ? coverImageS : require('../assets/image_not_found.jpg')} />
 		<Info>
@@ -40,10 +46,10 @@ const Preview = ({
 				<Title>{title}</Title>
 			</SLink>
 			<Author>{author}</Author>
-			<Price>{`${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
+			<Price>{`${formatNumber()}원`}</Price>
 		</Info>
 	</Container>
-);
+)};
 
 const SLink = styled(Link)`
 	text-decoration: none;

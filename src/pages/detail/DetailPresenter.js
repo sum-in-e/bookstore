@@ -4,7 +4,13 @@ import Loader from 'components/Loader';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
-const DetailPresenter = ({ bookDetail, loading, handleClick, handleSubmit, handleChange }) => (
+const DetailPresenter = ({ bookDetail, loading, handleClick, handleSubmit, handleChange }) => {
+	const formatNumber = () => {
+		return bookDetail.price
+			.toString()
+			.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+	}
+ return (
 	<>
 		{loading ? (
 			<Loader />
@@ -37,9 +43,7 @@ const DetailPresenter = ({ bookDetail, loading, handleClick, handleSubmit, handl
 								/>
 								<Info>
 									<SaleStatus>{bookDetail.saleStatus}</SaleStatus>
-									<Price>{`판매가       ${bookDetail.price
-										.toString()
-										.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}</Price>
+									<Price>{`판매가 ${formatNumber()}원`}</Price>
 									<Isbn>{`ISBN       ${bookDetail.isbn}`}</Isbn>
 									<Description>{bookDetail.description}</Description>
 									<span role="img" aria-label="rank">{`⭐️ ${bookDetail.reviewRank}/10`}</span>
@@ -55,7 +59,7 @@ const DetailPresenter = ({ bookDetail, loading, handleClick, handleSubmit, handl
 			</>
 		)}
 	</>
-);
+)};
 
 const Main = styled.main`
 	width: 100%;

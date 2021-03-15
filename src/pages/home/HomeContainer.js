@@ -43,15 +43,14 @@ class HomeContainer extends React.Component {
 				this.setState({
 					bestseller: result[0].data.item.slice(0, 10),
 					recommendation: result[1].data.item.slice(0, 6),
-					newBook: result[2].data.item.slice(0, 3)
+					newBook: result[2].data.item.slice(0, 3),
+					loading: false
 				}) 
 			);
 			window.scrollTo(0, 0);
-		} catch (error) {
-			alert('데이터를 불러오는 도중 오류가 발생했습니다. 화면을 다시 불러옵니다.');
-			this.props.history.push(`/`);
-		} finally {
-			this.setState({ loading: false });
+			} catch (error) {
+				alert('데이터를 불러오는 도중 오류가 발생했습니다. 화면을 다시 불러옵니다.');
+				this.props.history.push(`/`);
 		}
 	}
 

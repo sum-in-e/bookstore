@@ -81,7 +81,7 @@ const Input = styled.input`
 	outline: none;
 	font-size: 1.2rem;
 	border: none;
-	border-radius : none;
+	border-radius : 0;
 	border-bottom: 1px white solid;
 	background: none;
 	color: white;

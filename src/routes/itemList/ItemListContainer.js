@@ -1,6 +1,6 @@
 import React from 'react';
 import ItemListPresenter from './ItemListPresenter';
-import { booksApi } from 'api';
+import { booksApi } from 'api/api';
 
 class ItemListContainer extends React.Component {
 	state = {

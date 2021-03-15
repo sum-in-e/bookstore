@@ -1,6 +1,6 @@
 import React from 'react';
 import HomePresenter from './HomePresenter';
-import { booksApi } from 'api';
+import { booksApi } from 'api/api';
 
 class HomeContainer extends React.Component {
 	state = {

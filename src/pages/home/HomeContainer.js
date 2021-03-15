@@ -48,7 +48,8 @@ class HomeContainer extends React.Component {
 			);
 			window.scrollTo(0, 0);
 		} catch (error) {
-			console.log(error);
+			alert('데이터를 불러오는 도중 오류가 발생했습니다. 화면을 다시 불러옵니다.');
+			this.props.history.push(`/`);
 		} finally {
 			this.setState({ loading: false });
 		}

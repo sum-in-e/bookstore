@@ -72,9 +72,11 @@ const Title = styled.h1`
 const Input = styled.input`
 	width: 35vw;
 	height: 6vh;
+	border: #9f9fa3 1px solid;
 	outline: none;
 	font-size: 1.3rem;
-	border: #9f9fa3 1px solid;
+	-webkit-appearance: none;
+
 	@media ${props => props.theme.tabletL} {
 		width: 45vw;
 		height: 5vh;

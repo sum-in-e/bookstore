@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchPresenter from './SearchPresenter';
-import { booksApi } from 'api/api';
+import { booksApi } from 'api';
 
 class SearchContainer extends React.Component {
 	state = {

@@ -1,11 +1,11 @@
 // Break Point Size
 const size = {
 	desktop: '1581px',
-	laptop: '1580px',
-	tabletL: '1280px',
-	tabletM: '1024px',
-	tabletS: '768px',
-	mobile: '375px',
+	laptop: '1581px',
+	tabletL: '1281px',
+	tabletM: '1025px',
+	tabletS: '769px',
+	mobile: '376px',
 };
 
 // 위 size로 @media 안에 들어갈 내용 정의
